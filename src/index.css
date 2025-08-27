@@ -1,1 +1,117 @@
 @import "tailwindcss";
+
+body {
+    font-family: 'Geist', sans-serif;
+}
+
+/* Geist Regular */
+@font-face {
+  font-family: 'Geist';
+  src: url('/fonts/Geist-Regular.woff2') format('woff2');
+  font-weight: 400;
+  font-style: normal;
+}
+
+/* Geist Italic */
+@font-face {
+  font-family: 'Geist';
+  src: url('/fonts/Geist-Italic.woff2') format('woff2');
+  font-weight: 400;
+  font-style: italic;
+}
+
+/* Geist Light */
+@font-face {
+  font-family: 'Geist';
+  src: url('/fonts/Geist-Light.woff2') format('woff2');
+  font-weight: 300;
+  font-style: normal;
+}
+
+/* Geist Light Italic */
+@font-face {
+  font-family: 'Geist';
+  src: url('/fonts/Geist-LightItalic.woff2') format('woff2');
+  font-weight: 300;
+  font-style: italic;
+}
+
+/* Geist Medium */
+@font-face {
+  font-family: 'Geist';
+  src: url('/fonts/Geist-Medium.woff2') format('woff2');
+  font-weight: 500;
+  font-style: normal;
+}
+
+/* Geist Semibold */
+@font-face {
+  font-family: 'Geist';
+  src: url('/fonts/Geist-SemiBold.woff2') format('woff2');
+  font-weight: 600;
+  font-style: normal;
+}
+
+/* Geist Bold */
+@font-face {
+  font-family: 'Geist';
+  src: url('/fonts/Geist-Bold.woff2') format('woff2');
+  font-weight: 700;
+  font-style: normal;
+}
+
+/* Geist Bold Italic */
+@font-face {
+  font-family: 'Geist';
+  src: url('/fonts/Geist-BoldItalic.woff2') format('woff2');
+  font-weight: 700;
+  font-style: italic;
+}
+
+/* Geist Extra Light */
+@font-face {
+  font-family: 'Geist';
+  src: url('/fonts/Geist-ExtraLight.woff2') format('woff2');
+  font-weight: 200;
+  font-style: normal;
+}
+
+/* Geist Extra Light Italic */
+@font-face {
+  font-family: 'Geist';
+  src: url('/fonts/Geist-ExtraLightItalic.woff2') format('woff2');
+  font-weight: 200;
+  font-style: italic;
+}
+
+/* Geist Extra Bold */
+@font-face {
+  font-family: 'Geist';
+  src: url('/fonts/Geist-ExtraBold.woff2') format('woff2');
+  font-weight: 800;
+  font-style: normal;
+}
+
+/* Geist Extra Bold Italic */
+@font-face {
+  font-family: 'Geist';
+  src: url('/fonts/Geist-ExtraBoldItalic.woff2') format('woff2');
+  font-weight: 800;
+  font-style: italic;
+}
+
+/* Geist Black */
+@font-face {
+  font-family: 'Geist';
+  src: url('/fonts/Geist-Black.woff2') format('woff2');
+  font-weight: 900;
+  font-style: normal;
+}
+
+/* Geist Black Italic */
+@font-face {
+  font-family: 'Geist';
+  src: url('/fonts/Geist-BlackItalic.woff2') format('woff2');
+  font-weight: 900;
+  font-style: italic;
+}
