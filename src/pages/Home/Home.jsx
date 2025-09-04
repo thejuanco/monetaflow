@@ -1,7 +1,27 @@
+import NavBarHome from "../../components/layout/home/NavBarHome"
+
 export default function Home(){
     return (
-        <div>
-            Home
-        </div>
+        <>
+            <NavBarHome/>
+            <main className="flex-1">
+                <div className="w-full py-12 md:py-24 lg:py-32 xl:py-48">
+                    <div className="px-4 md:px-6">
+                        <div className="grid gap-6 lg:grid-cols-2 lg:gap-12 xl:grid-cols-2">
+                            <div className="flex flex-col justify-center space-y-4">
+                                <div className="space-y-2">
+                                    <h1 className="text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl lg:text-6xl/none">
+                                        Administra tus finanzas con facilidad
+                                    </h1>
+                                    <p className="max-w-[600px] text-gray-600 md:text-xl">
+                                        Moneta-Flow te ayuda a controlar tus gastos, ahorrar dinero y alcanzar tus metas financieras.
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </main>
+        </>
     )
 }
