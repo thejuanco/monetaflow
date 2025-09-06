@@ -1,3 +1,4 @@
+import { Link } from "react-router"
 import NavBarHome from "../../components/layout/home/NavBarHome"
 
 export default function Home(){
@@ -16,6 +17,12 @@ export default function Home(){
                                     <p className="max-w-[600px] text-gray-600 md:text-xl">
                                         Moneta-Flow te ayuda a controlar tus gastos, ahorrar dinero y alcanzar tus metas financieras.
                                     </p>
+                                </div>
+                                <div className="space-x-2">
+                                    <Link className="py-2 px-3 bg-blue-700 text-gray-100 rounded-lg font-medium">Empieza gratis</Link>
+                                    <Link
+                                     to="/signin"
+                                     className="py-2 px-3 border border-blue-300 text-blue-700 rounded-lg font-medium">Iniciar Sesión</Link>
                                 </div>
                             </div>
                         </div>
