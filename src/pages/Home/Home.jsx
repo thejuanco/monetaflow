@@ -21,7 +21,7 @@ export default function Home(){
                                 <div className="space-x-2">
                                     <Link className="py-2 px-3 bg-blue-700 text-gray-100 rounded-lg font-medium">Empieza gratis</Link>
                                     <Link
-                                     to="/signin"
+                                     to="/auth/signin"
                                      className="py-2 px-3 border border-blue-300 text-blue-700 rounded-lg font-medium">Iniciar Sesión</Link>
                                 </div>
                             </div>

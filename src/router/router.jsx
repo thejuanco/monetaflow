@@ -11,8 +11,10 @@ export default function Router (){
     return (
         <BrowserRouter>
             <Routes>
-                <Route path="/" element={<Home/>}/>
-                <Route path="/signin" element={<Login/>}/>
+                <Route index path="/" element={<Home/>}/>
+                <Route path="/auth/signin" element={<Login/>}/>
+                <Route path="/auth/signup" element={<Login/>}/>
+                <Route path="/auth/recovery-password" element={<Login/>}/>
             </Routes>
         </BrowserRouter>
     )
