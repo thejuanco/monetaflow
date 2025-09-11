@@ -4,9 +4,10 @@ import { BrowserRouter, Routes, Route } from "react-router";
 //Paginas publicas
 import Home from "../pages/Home/Home";
 import NotFound from "../pages/Home/NotFound";
+import Login from "../pages/auth/Login";
+import RecoveryPassword from "../pages/auth/RecoveryPassword";
 
 //Paginas privadas
-import Login from "../pages/auth/Login";
 
 export default function Router (){
     return (
@@ -16,7 +17,7 @@ export default function Router (){
                 <Route path="*" element={<NotFound/>}/>
                 <Route path="/auth/signin" element={<Login/>}/>
                 <Route path="/auth/signup" element={<Login/>}/>
-                <Route path="/auth/recovery-password" element={<Login/>}/>
+                <Route path="/auth/recovery-password" element={<RecoveryPassword/>}/>
             </Routes>
         </BrowserRouter>
     )
