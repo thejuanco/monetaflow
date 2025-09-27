@@ -1,13 +1,23 @@
-import { Link } from "react-router";
+import { Link, useNavigate } from "react-router";
 import NavBarAuth from "../../components/layout/auth/NavBarAuth";
 
 export default function Register() {
     let errors = false
+    const navigate = useNavigate()
+
+    const onSubmit = () => {
+      try {
+        
+      } catch (error) {
+        console.log(error)
+      }
+    }
+
   return (
     <>
       <NavBarAuth />
       <div className="flex justify-center items-center pt-12">
-        <div className="lg:w-1/5 md:w-1/4 sm:w-1/2 sm:m-10 border border-gray-100 p-6 rounded-xl shadow">
+        <div className="lg:w-1/4 md:w-1/4 sm:w-1/2 sm:m-10 border border-gray-100 p-6 rounded-xl shadow">
           <h1 className="text-black font-semibold text-2xl">
             Ahorra como nunca antes
           </h1>
@@ -116,7 +126,7 @@ export default function Register() {
                 )}
               </div>
             </div>
-            <button className="bg-blue-700 text-white w-full mt-8 py-2 font-medium rounded-lg hover:bg-blue-600">
+            <button onClick={() => navigate("/auth/confirmation-email")} className="bg-blue-700 text-white w-full mt-8 py-2 font-medium rounded-lg hover:bg-blue-600">
               Continuar
             </button>
           </form>

@@ -7,7 +7,7 @@ export default function Login() {
     <>
         <NavBarAuth/>
         <div className="flex justify-center items-center pt-12">
-            <div className="md:w-1/4 sm:w-1/2 lg:w-1/5 sm:m-10 border border-gray-100 p-6 rounded-xl shadow">
+            <div className="md:w-1/3 sm:w-1/2 lg:w-1/4 sm:m-10 border border-gray-100 p-6 rounded-xl shadow">
                 <h1 className="text-black font-semibold text-2xl">
                     Tu dinero bajo control
                 </h1>

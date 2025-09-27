@@ -7,6 +7,7 @@ import NotFound from "../pages/Home/NotFound";
 import Login from "../pages/auth/Login";
 import RecoveryPassword from "../pages/auth/RecoveryPassword";
 import Register from "../pages/auth/Register";
+import ConfirmEmail from "../pages/auth/ConfirmEmail";
 
 //Paginas privadas
 
@@ -19,6 +20,7 @@ export default function Router (){
                 <Route path="/auth/signin" element={<Login/>}/>
                 <Route path="/auth/signup" element={<Register/>}/>
                 <Route path="/auth/recovery-password" element={<RecoveryPassword/>}/>
+                <Route path="/auth/confirmation-email" element={<ConfirmEmail/>} />
             </Routes>
         </BrowserRouter>
     )
