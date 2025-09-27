@@ -1,5 +1,6 @@
 import { Link } from "react-router";
 import NavBarHome from "../../components/layout/home/NavBarHome";
+import FooterHome from "../../components/layout/home/FooterHome";
 
 export default function Home() {
   return (
@@ -38,6 +39,7 @@ export default function Home() {
           </div>
         </div>
       </main>
+      <FooterHome/>
     </>
   );
 }
