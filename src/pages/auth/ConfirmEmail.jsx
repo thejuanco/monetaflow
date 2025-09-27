@@ -35,13 +35,13 @@ export default function ConfirmEmail() {
           </button>
           <div className="text-center mt-4">
             ¿Ya verificaste tu correo?{" "}
-            <Link to="/auth/signin" className="text-green-600 hover:underline">
+            <Link to="/auth/signin" className="text-emerald-600 hover:underline">
               Iniciar sesión
             </Link>
           </div>
           <div className="text-center text-sm text-gray-500 my-2">
             ¿Necesitas ayuda?{" "}
-            <Link to="/contact" className="text-green-500 hover:underline">
+            <Link to="/auth/support" className="text-emerald-700 hover:underline">
               Contacta con soporte
             </Link>
           </div>
