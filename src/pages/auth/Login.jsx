@@ -57,7 +57,7 @@ export default function Login() {
                             </div>
                         </div>
                     </div>
-                    <button className="bg-blue-700 text-white w-full mt-8 py-2 font-medium rounded-lg hover:bg-blue-600">
+                    <button className="bg-emerald-700 text-white w-full mt-8 py-2 font-medium rounded-lg hover:bg-emerald-600">
                         Iniciar Sesión
                     </button>
                 </form>

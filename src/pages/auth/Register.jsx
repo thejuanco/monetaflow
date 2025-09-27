@@ -126,7 +126,7 @@ export default function Register() {
                 )}
               </div>
             </div>
-            <button onClick={() => navigate("/auth/confirmation-email")} className="bg-blue-700 text-white w-full mt-8 py-2 font-medium rounded-lg hover:bg-blue-600">
+            <button onClick={() => navigate("/auth/confirmation-email")} className="bg-emerald-700 text-white w-full mt-8 py-2 font-medium rounded-lg hover:bg-emerald-600">
               Continuar
             </button>
           </form>
