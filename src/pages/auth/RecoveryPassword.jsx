@@ -1,8 +1,23 @@
+import { useForm } from "react-hook-form";
 import { Link } from "react-router";
 import NavBarAuth from "../../components/layout/auth/NavBarAuth";
 
 export default function RecoveryPassword() {
-  let errors = false;
+  const {
+    register,
+    handleSubmit,
+    setError,
+    formState: {errors}
+  } = useForm()
+
+  const onSubmit = data => {
+    try {
+      console.log(data)
+    } catch (error) {
+      console.log(error)
+    }
+  }
+  
   return (
     <>
       <NavBarAuth />
@@ -14,7 +29,7 @@ export default function RecoveryPassword() {
           <h1 className="text-gray-400 text-2xl font-semibold ">
             Recupera tu contraseña
           </h1>
-          <form onSubmit={() => {}} className="mt-12 mb-4">
+          <form onSubmit={handleSubmit(onSubmit)} className="mt-12 mb-4">
             <div className="space-y-2 mb-12 ">
               <label className="font-semibold" htmlFor="email">
                 Correo electronico*
@@ -28,11 +43,20 @@ export default function RecoveryPassword() {
                     : "border-gray-200"
                 }`}
                 placeholder="Ingresa tu correo electrónico"
-                // {...register('email', {required: true})}
+                {...register("email", {
+                  required: {
+                    value: true,
+                    message: "El correo es obligatorio",
+                  },
+                  pattern: {
+                    value: /^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,4}$/i,
+                    message: "El correo no es válido",
+                  },
+                })}
               />
-              {errors.email?.type === "required" && (
+              {errors.email && (
                 <p role="alert" className="text-red-700 text-sm text-center">
-                  El correo es obligatorio
+                  {errors.email.message}
                 </p>
               )}
             </div>
