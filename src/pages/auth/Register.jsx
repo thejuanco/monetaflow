@@ -1,17 +1,25 @@
 import { Link, useNavigate } from "react-router";
+import { useForm } from "react-hook-form";
 import NavBarAuth from "../../components/layout/auth/NavBarAuth";
 
 export default function Register() {
-    let errors = false
-    const navigate = useNavigate()
+  const {
+    register,
+    watch,
+    formState: {errors},
+    handleSubmit
+  } = useForm()
+  //Navegación
+  const navigate = useNavigate()
 
-    const onSubmit = () => {
-      try {
-        
-      } catch (error) {
-        console.log(error)
-      }
+  const onSubmit = (data) => {
+    try {
+      navigate("/auth/confirmation-email")
+      console.log(data)
+    } catch (error) {
+      console.log(error)
     }
+  }
 
   return (
     <>
@@ -24,7 +32,7 @@ export default function Register() {
           <h1 className="text-gray-500 text-2xl font-semibold ">
             Crea tu cuenta en Moneta
           </h1>
-          <form onSubmit={() => {}} className="mt-10 mb-6">
+          <form onSubmit={handleSubmit(onSubmit)} className="mt-10 mb-6">
             <div className="space-y-4">
               <div className="space-y-2">
                 <label className="font-semibold block" htmlFor="name">
@@ -39,7 +47,7 @@ export default function Register() {
                       : "border-gray-200"
                   }`}
                   placeholder="Tu nombre"
-                //   {...register("name", { required: true })}
+                {...register("name", { required: true })}
                 />
                 {errors.name?.type === "required" && (
                   <p role="alert" className="text-red-700 text-sm text-center">
@@ -59,7 +67,7 @@ export default function Register() {
                       ? "border-red-500 focus:ring-red-500"
                       : "border-gray-200"
                   }`}
-                //   {...register("lastName", { required: true })}
+                {...register("lastName", { required: {value: true} })}
                 />
                 {errors.lastName?.type === "required" && (
                   <p role="alert" className="text-red-700 text-sm text-center">
@@ -78,16 +86,16 @@ export default function Register() {
                       : "border-gray-200"
                   }`}
                   placeholder="ejemplo@correo.com"
-                //   {...register("email", {
-                //     required: {
-                //       value: true,
-                //       message: "El correo es obligatorio",
-                //     },
-                //     pattern: {
-                //       value: /^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,4}$/i,
-                //       message: "El correo no es válido",
-                //     },
-                //   })}
+                  {...register("email", {
+                    required: {
+                      value: true,
+                      message: "El correo es obligatorio",
+                    },
+                    pattern: {
+                      value: /^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,4}$/i,
+                      message: "El correo no es válido",
+                    },
+                  })}
                 />
                 {errors.email && (
                   <p role="alert" className="text-red-700 text-sm text-center">
@@ -108,16 +116,16 @@ export default function Register() {
                       : "border-gray-200"
                   }`}
                   type="password"
-                //   {...register("password", {
-                //     required: {
-                //       value: true,
-                //       message: "La contraseña es obligatoria",
-                //     },
-                //     minLength: {
-                //       value: 6,
-                //       message: "La contraseña es demasiado corta",
-                //     },
-                //   })}
+                  {...register("password", {
+                    required: {
+                      value: true,
+                      message: "La contraseña es obligatoria",
+                    },
+                    minLength: {
+                      value: 6,
+                      message: "La contraseña es demasiado corta",
+                    },
+                  })}
                 />
                 {errors.password && (
                   <p role="alert" className="text-red-700 text-sm text-center">
@@ -126,7 +134,7 @@ export default function Register() {
                 )}
               </div>
             </div>
-            <button onClick={() => navigate("/auth/confirmation-email")} className="bg-emerald-700 text-white w-full mt-8 py-2 font-medium rounded-lg hover:bg-emerald-600">
+            <button className="bg-emerald-700 text-white w-full mt-8 py-2 font-medium rounded-lg hover:bg-emerald-600">
               Continuar
             </button>
           </form>
