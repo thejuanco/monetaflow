@@ -1,7 +1,8 @@
-import { Link } from "react-router";
+import { Link, useNavigate } from "react-router";
 import NavBarAuth from "../../components/layout/auth/NavBarAuth";
 
 export default function ConfirmEmail() {
+  const navigate = useNavigate()
   const data = "correo@correo.com";
   return (
     <>
@@ -41,7 +42,7 @@ export default function ConfirmEmail() {
           </div>
           <div className="text-center text-sm text-gray-500 my-2">
             ¿Necesitas ayuda?{" "}
-            <Link to="/auth/support" className="text-emerald-700 hover:underline">
+            <Link to={"/home/support"} className="text-emerald-700 hover:underline">
               Contacta con soporte
             </Link>
           </div>
