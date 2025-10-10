@@ -8,7 +8,7 @@ import Login from "../pages/auth/Login";
 import RecoveryPassword from "../pages/auth/RecoveryPassword";
 import Register from "../pages/auth/Register";
 import ConfirmEmail from "../pages/auth/ConfirmEmail";
-import SupportHome from "../components/layout/home/SupportHome";
+import Support from "../pages/Home/Support";
 
 //Paginas privadas
 
@@ -22,7 +22,7 @@ export default function Router (){
                 <Route path="/auth/signup" element={<Register/>}/>
                 <Route path="/auth/recovery-password" element={<RecoveryPassword/>}/>
                 <Route path="/auth/confirmation-email" element={<ConfirmEmail/>} />
-                <Route path="/home/support" element={<SupportHome/>} />
+                <Route path="/home/support" element={<Support/>} />
             </Routes>
         </BrowserRouter>
     )
