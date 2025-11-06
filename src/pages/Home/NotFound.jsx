@@ -1,5 +1,5 @@
 import { Link } from "react-router"
-import NavBarAuth from "../../components/layout/auth/NavBarAuth"
+import NavBarAuth from "../../features/auth/components/NavBarAuth"
 
 export default function NotFound() {
   return (

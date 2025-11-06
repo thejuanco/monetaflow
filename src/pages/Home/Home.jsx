@@ -1,6 +1,6 @@
 import { Link } from "react-router";
-import NavBarHome from "../../components/layout/home/NavBarHome";
-import FooterHome from "../../components/layout/home/FooterHome";
+import NavBarHome from "../../shared/components/layout/NavBarHome";
+import FooterHome from "../../shared/components/layout/FooterHome";
 
 export default function Home() {
   return (

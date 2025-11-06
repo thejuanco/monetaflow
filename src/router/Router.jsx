@@ -4,10 +4,10 @@ import { BrowserRouter, Routes, Route } from "react-router";
 //Paginas publicas
 import Home from "../pages/Home/Home";
 import NotFound from "../pages/Home/NotFound";
-import Login from "../pages/auth/Login";
-import RecoveryPassword from "../pages/auth/RecoveryPassword";
-import Register from "../pages/auth/Register";
-import ConfirmEmail from "../pages/auth/ConfirmEmail";
+import Login from "../features/auth/Login";
+import RecoveryPassword from "../features/auth/RecoveryPassword";
+import Register from "../features/auth/Register";
+import ConfirmEmail from "../features/auth/ConfirmEmail";
 import Support from "../pages/Home/Support";
 
 //Paginas privadas

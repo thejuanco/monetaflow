@@ -1,5 +1,5 @@
 import { Link, useNavigate } from "react-router";
-import NavBarAuth from "../../components/layout/auth/NavBarAuth";
+import NavBarAuth from "./components/NavBarAuth";
 
 export default function ConfirmEmail() {
   const navigate = useNavigate()

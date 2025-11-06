@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { Link } from "react-router";
 import { useForm } from "react-hook-form";
-import NavBarAuth from "../../components/layout/auth/NavBarAuth";
+import NavBarAuth from "./components/NavBarAuth";
 
 export default function Login() {
   const [isVisible, setIsVisible] = useState(false);
