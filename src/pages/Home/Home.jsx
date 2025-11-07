@@ -15,7 +15,7 @@ export default function Home() {
                   <h1 className="text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl lg:text-6xl/none">
                     Administra tus finanzas con facilidad
                   </h1>
-                  <p className="max-w-[600px] text-gray-600 md:text-xl">
+                  <p className="text-gray-600 md:text-xl">
                     Moneta-Flow te ayuda a controlar tus gastos, ahorrar dinero
                     y alcanzar tus metas financieras.
                   </p>
@@ -36,11 +36,11 @@ export default function Home() {
                 </div>
               </div>
               <div>
-              <div className="flex items-center justify-center bg-slate-100">
+              <div className="flex items-center justify-center bg-slate-100 w-full h-full">
                 <img
                   src="/img/Moneta-Inicio.png"
                   alt="Dashboard de Moneta-Flow"
-                  className="rounded-lg object-cover transition-transform hover:scale-105 shadow"
+                  className="w-full max-w-[750px] lg:max-w-[900px] rounded-lg object-cover transition-transform hover:scale-105 shadow"
                 />
               </div>
               </div>
@@ -49,17 +49,17 @@ export default function Home() {
         </section>
 
         {/*Features*/}
-        <section id="features" className="w-full py-12 md:py-24 lg:py-32">
+        <section id="features" className="bg-gray-50 w-full py-12 md:py-24 lg:py-32 flex justify-center">
           <div className="container px-4 md:px-6">
             <div className="flex flex-col items-center justify-center space-y-4 text-center">
               <div className="space-y-2">
-                <div className="inline-block rounded-lg bg-primary px-3 py-1 text-sm">
+                <div className="inline-block rounded-lg bg-green-600 px-3 text-gray-100 py-1 text-sm">
                   Características
                 </div>
                 <h2 className="text-3xl font-bold tracking-tighter md:text-4xl/tight">
                   Todo lo que necesitas para administrar tus finanzas
                 </h2>
-                <p className="max-w-[900px] text-muted-foreground md:text-xl">
+                <p className="max-w-[900px] text-gray-600 md:text-xl">
                   Moneta-Flow ofrece herramientas potentes y fáciles de usar para ayudarte a tomar el control de tu
                   dinero.
                 </p>

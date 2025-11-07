@@ -31,12 +31,12 @@ export default function Login() {
   return (
     <>
       <NavBarAuth />
-      <div className="flex justify-center items-center pt-12">
-        <div className="md:w-1/3 sm:w-1/2 lg:w-1/4 sm:m-10 border border-gray-100 p-6 rounded-xl shadow">
-          <h1 className="text-black font-semibold text-2xl">
+      <div className="flex min-h-screen flex-col items-center justify-center p-1">
+        <div className="w-full max-w-md p-6 rounded-xl shadow border border-gray-200">
+          <h1 className="text-black tracking-tighter font-semibold text-2xl">
             Tu dinero bajo control
           </h1>
-          <h1 className="text-gray-500 text-2xl font-semibold ">
+          <h1 className="text-gray-400 tracking-tighter text-2xl font-semibold ">
             Inicia Sesión en Moneta
           </h1>
           <form onSubmit={handleSubmit(onSubmit)} className="mt-10 mb-6">
