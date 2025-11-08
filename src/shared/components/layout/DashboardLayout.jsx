@@ -7,7 +7,7 @@ export default function DashboardLayout() {
   return (
     <div className="min-h-screen grid md:grid-cols-[240px_1fr]">
       <SidebarLayout />
-      <div className="bg-slate-100 flex flex-col">
+      <div className="flex flex-col">
         <NavbarLayout />
         <main className="flex-1 p-4 overflow-y-auto">
           <Outlet />

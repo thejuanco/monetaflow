@@ -2,9 +2,9 @@ import { NavLink } from "react-router"
 
 export default function SidebarLayout() {
   return (
-    <aside className="hidden md:flex flex-col bg-muted/40 border-r">
-      <div className="h-14 flex items-center border-b px-4">
-        <span>Moneta</span>
+    <aside className="hidden md:flex flex-col bg-muted/40 border-r border-gray-200">
+      <div className="h-14 flex items-center border-b border-gray-200 px-4">
+        <h2 className="tracking-tight font-bold text-2xl text-emerald-600">Moneta</h2>
       </div>
 
       <nav className="flex-1 overflow-auto py-2 px-2 text-sm space-y-1">
@@ -34,7 +34,7 @@ export default function SidebarLayout() {
             </svg>
             <p className="text-lg">Transacciones</p>
         </NavLink>
-        <NavLink to="/dashboard/transactions" 
+        <NavLink to="/dashboard/accounts" 
             className={"flex flex-row hover:bg-gray-200 rounded px-2 py-1 cursor-pointer"}
         >
             <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="size-6">
@@ -42,7 +42,7 @@ export default function SidebarLayout() {
             </svg>
             <p className="text-lg">Cuentas</p>
         </NavLink>
-        <NavLink to="/dashboard/transactions" 
+        <NavLink to="/dashboard/reports" 
             className={"flex flex-row hover:bg-gray-200 rounded px-2 py-1 cursor-pointer"}
         >
             <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="size-6">
