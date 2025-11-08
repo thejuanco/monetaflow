@@ -13,6 +13,7 @@ import Support from "../pages/Home/Support";
 //Paginas privadas
 import DashboardLayout from "../shared/components/layout/DashboardLayout";
 import Dashboard from "../features/dashboard/pages/Dashboard";
+import Transactions from "../features/transactions/pages/Transactions";
 
 export default function Router (){
     return (
@@ -29,6 +30,7 @@ export default function Router (){
                 {/*Rutas del dashboard*/}
                 <Route element={<DashboardLayout/>}>
                     <Route path="/dashboard" element={<Dashboard/>}/>
+                    <Route path="/transactions" element={<Transactions/>}/>
                 </Route>
             </Routes>
         </BrowserRouter>

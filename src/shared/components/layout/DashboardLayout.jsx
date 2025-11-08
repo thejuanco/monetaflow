@@ -1,17 +1,18 @@
+//En este archivo se renderizan las pantallas dentro del dash del usuario
 import { Outlet } from "react-router"
 import SidebarLayout from "./SidebarLayout"
 import NavbarLayout from "./NavbarLayout"
 
 export default function DashboardLayout() {
   return (
-    <div>
-        <SidebarLayout/>
-        <div>
-            <NavbarLayout/>
-            <main>
-                <Outlet/>
-            </main>
-        </div>
+    <div className="min-h-screen grid md:grid-cols-[240px_1fr]">
+      <SidebarLayout />
+      <div className="bg-slate-100 flex flex-col">
+        <NavbarLayout />
+        <main className="flex-1 p-4 overflow-y-auto">
+          <Outlet />
+        </main>
+      </div>
     </div>
   )
 }
