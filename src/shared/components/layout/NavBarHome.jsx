@@ -13,7 +13,7 @@ export default function NavBarHome() {
           </Link>
         </div>
         <div className="flex flex-1 items-center justify-center space-x-2 md:justify-end">
-          <nav className="flex items-center space-x-6 text-sm font-medium">
+          <nav className="flex items-center space-x-4 text-sm font-medium">
             <Link to="/auth/signup" className="flex items-center font-medium py-2 px-4 rounded-full hover:bg-gray-200 transition-transform duration-300 transform hover:scale-105">
               Crear cuenta
             </Link>
