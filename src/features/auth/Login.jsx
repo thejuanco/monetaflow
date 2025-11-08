@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { Link } from "react-router";
+import { Link, useNavigate } from "react-router";
 import { useForm } from "react-hook-form";
 import NavBarAuth from "./components/NavBarAuth";
 
@@ -11,9 +11,16 @@ export default function Login() {
     formState: { errors },
   } = useForm();
 
+  const navigate = useNavigate()
+
   const onSubmit = (data) => {
     try {
       console.log(data);
+      //Simulando el login
+      //TODO: Conexion con API
+      setTimeout(() => {
+        navigate("/dashboard")
+      }, 3000)
     } catch (error) {
       const status = error.message;
       if (status === "Network Error") {
