@@ -11,6 +11,8 @@ import ConfirmEmail from "../features/auth/ConfirmEmail";
 import Support from "../pages/Home/Support";
 
 //Paginas privadas
+import DashboardLayout from "../shared/components/layout/DashboardLayout";
+import Dashboard from "../features/dashboard/pages/Dashboard";
 
 export default function Router (){
     return (
@@ -23,6 +25,11 @@ export default function Router (){
                 <Route path="/auth/recovery-password" element={<RecoveryPassword/>}/>
                 <Route path="/auth/confirmation-email" element={<ConfirmEmail/>} />
                 <Route path="/home/support" element={<Support/>} />
+
+                {/*Rutas del dashboard*/}
+                <Route element={<DashboardLayout/>}>
+                    <Route path="/dashboard" element={<Dashboard/>}/>
+                </Route>
             </Routes>
         </BrowserRouter>
     )
