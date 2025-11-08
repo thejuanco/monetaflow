@@ -14,6 +14,7 @@ import Support from "../pages/Home/Support";
 import DashboardLayout from "../shared/components/layout/DashboardLayout";
 import Dashboard from "../features/dashboard/pages/Dashboard";
 import Transactions from "../features/transactions/pages/Transactions";
+import Budgets from "../features/budgets/pages/Budgets";
 
 export default function Router (){
     return (
@@ -31,6 +32,7 @@ export default function Router (){
                 <Route element={<DashboardLayout/>}>
                     <Route path="/dashboard" element={<Dashboard/>}/>
                     <Route path="/dashboard/transactions" element={<Transactions/>}/>
+                    <Route path="/dashboard/budgets" element={<Budgets/>}/>
                 </Route>
             </Routes>
         </BrowserRouter>
