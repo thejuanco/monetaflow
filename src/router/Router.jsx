@@ -30,7 +30,7 @@ export default function Router (){
                 {/*Rutas del dashboard*/}
                 <Route element={<DashboardLayout/>}>
                     <Route path="/dashboard" element={<Dashboard/>}/>
-                    <Route path="/transactions" element={<Transactions/>}/>
+                    <Route path="/dashboard/transactions" element={<Transactions/>}/>
                 </Route>
             </Routes>
         </BrowserRouter>
