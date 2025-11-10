@@ -1,3 +1,5 @@
+import ProfileDropDown from "./ProfileDropDown"
+
 export default function NavbarLayout() {
   return (
     <header className="hidden h-14 items-center gap-4 border-b border-gray-200 bg-muted/40 px-4 md:flex">
@@ -12,6 +14,7 @@ export default function NavbarLayout() {
                 </div>
             </form>
         </div>
+        <ProfileDropDown />
     </header>
   )
 }
