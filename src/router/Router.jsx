@@ -15,6 +15,9 @@ import DashboardLayout from "../shared/components/layout/DashboardLayout";
 import Dashboard from "../features/dashboard/pages/Dashboard";
 import Transactions from "../features/transactions/pages/Transactions";
 import Budgets from "../features/budgets/pages/Budgets";
+import Accounst from "../features/accounts/pages/Accounst";
+import Reports from "../features/reports/pages/Reports";
+import Calendar from "../features/calendar/pages/Calendar";
 
 export default function Router (){
     return (
@@ -32,6 +35,9 @@ export default function Router (){
                 <Route element={<DashboardLayout/>}>
                     <Route path="/dashboard" element={<Dashboard/>}/>
                     <Route path="/dashboard/transactions" element={<Transactions/>}/>
+                    <Route path="/dashboard/reports" element={<Reports/>}/>
+                    <Route path="/dashboard/accounts" element={<Accounst/>}/>
+                    <Route path="/dashboard/calendar" element={<Calendar/>}/>
                     <Route path="/dashboard/budgets" element={<Budgets/>}/>
                 </Route>
             </Routes>
