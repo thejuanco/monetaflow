@@ -1,5 +1,7 @@
 import SummaryCards from "../components/SummaryCards"
 import TransactionsDash from "../components/TransactionsDash"
+import FinancialSumDash from "../components/FinancialSumDash"
+import ExpenseDistriDash from "../components/ExpenseDistriDash"
 
 export default function Dashboard() {
   return (
@@ -73,6 +75,13 @@ export default function Dashboard() {
 
       {/*Transactions*/}
       <TransactionsDash/>
+
+      {/**/}
+      <div className="grid grid-cols-[3fr_2fr] gap-4">
+        <FinancialSumDash />
+        <ExpenseDistriDash />
+      </div>  
+
     </div>
   )
 }
