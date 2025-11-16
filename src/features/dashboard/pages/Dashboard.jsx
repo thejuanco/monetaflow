@@ -1,9 +1,12 @@
-import SummaryCards from "../components/SummaryCards"
+import { useState } from "react"
 import TransactionsDash from "../components/TransactionsDash"
 import FinancialSumDash from "../components/FinancialSumDash"
 import ExpenseDistriDash from "../components/ExpenseDistriDash"
+import UpdateBalanceDash from "../components/UpdateBalanceDash"
 
 export default function Dashboard() {
+    const [isOpen, setIsOpen] = useState(false)
+
   return (
     <div className="flex-1 space-y-4 p-4 md:p-4 pt-6">
       <div className="flex items-center justify-between">
@@ -26,9 +29,13 @@ export default function Dashboard() {
           </div>
           <div className="flex items-center justify-between">
             <p className="text-2xl font-bold">$45231.89</p>
-            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="size-8 hover:cursor-pointer hover:bg-gray-200 p-1 rounded-lg">
-              <path strokeLinecap="round" strokeLinejoin="round" d="m16.862 4.487 1.687-1.688a1.875 1.875 0 1 1 2.652 2.652L6.832 19.82a4.5 4.5 0 0 1-1.897 1.13l-2.685.8.8-2.685a4.5 4.5 0 0 1 1.13-1.897L16.863 4.487Zm0 0L19.5 7.125" />
-            </svg>
+            <button
+              onClick={() => setIsOpen(true)}
+            >
+              <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="size-8 hover:cursor-pointer hover:bg-gray-200 p-1 rounded-lg">
+                <path strokeLinecap="round" strokeLinejoin="round" d="m16.862 4.487 1.687-1.688a1.875 1.875 0 1 1 2.652 2.652L6.832 19.82a4.5 4.5 0 0 1-1.897 1.13l-2.685.8.8-2.685a4.5 4.5 0 0 1 1.13-1.897L16.863 4.487Zm0 0L19.5 7.125" />
+              </svg>
+            </button>
           </div>
           <p className="text-xs text-gray-500">+20.1% desde el mes pasado</p>
         </div>
@@ -80,7 +87,13 @@ export default function Dashboard() {
       <div className="grid grid-cols-[3fr_2fr] gap-4">
         <FinancialSumDash />
         <ExpenseDistriDash />
-      </div>  
+      </div>
+
+      {/*Dialogs*/}
+      <UpdateBalanceDash
+        isOpen={isOpen}
+        setIsOpen={setIsOpen}
+      />
 
     </div>
   )
