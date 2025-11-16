@@ -68,7 +68,8 @@ export default function Transactions() {
       </div>
 
       {/*Transactions Grid */}
-      <TransactionsList/>
+      <TransactionsList />
+
     </div>
   )
 }
