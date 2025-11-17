@@ -5,7 +5,7 @@ export default function Calendar() {
   const nowDay = today.getDate()
 
   const [selectedDay, setSelectedDay] = useState(null)
-  const [currentDate, setCurrentDate] = useState(new Date(2025, 11, 17))
+  const [currentDate, setCurrentDate] = useState(new Date(2025, 10, 17))
   const months = [
     "Enero",
     "Febrero",
@@ -41,20 +41,35 @@ export default function Calendar() {
       days.push({
         date,
         month: month - 1,
-        transactions: []
-        //isCurrentMonth: false,
-        //isToday: false
+        transactions: [],
+        isCurrentMonth: false,
+        isToday: false
       })
     }
 
-    //Dias del mes actual
+    //Día del mes actual
+    const today = new Date()
+    for(let i = 1; i <= daysInMonth; i++){
+      const key = `${year}-${month + 1}-${i}`
+      const isToday = today.getDate() === i && today.getMonth() === month && today.getFullYear() === year
+      days.push({
+        date: i,
+        month,
+        isCurrentMonth: true,
+        isToday
+      })
+    }
+
+    //Dias del mes siguiente
     const remainingDays = 42 - days.length
     for(let i = 1; i <= remainingDays; i++){
       const key = `${year}-${month + 2}-${i}`
       days.push({
         date: i,
         month,
-        transactions: []
+        transactions: [],
+        isCurrentMonth: false,
+        isToday: false
       })
     }
 
@@ -68,7 +83,7 @@ export default function Calendar() {
   return (
     <div className="flex-1 space-y-4 p-4 md:p-4 pt-6">
       <div className="flex items-center justify-between">
-        <h2 className="text-3xl font-bold tracking-tight">Noviembre</h2>
+        <h2 className="text-3xl font-bold tracking-tight">{months[currentDate.getMonth()]} {currentDate.getFullYear()}</h2>
         <div className="flex items-center gap-2">
           <button className="border border-gray-200 flex justify-center items-center py-2 px-3 hover:bg-gray-200">
             <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="size-5 text-gray-600 mr-1">
@@ -91,15 +106,19 @@ export default function Calendar() {
 
           {/*Calendar days*/}
           {calendarDays.map((day, index) => {
-            const total = getTotalForDay(day)
+            //const total = getTotalForDay(day)
 
             return (
               <button
                 key={index} 
-                className="min-h-[100px] border border-gray-200 p-2 hover:shadow-md text-left"
+                className={`min-h-[100px] border border-gray-200 p-2 hover:shadow-md text-left transition-all
+                  ${!day.isCurrentMonth ? "bg-gray-100 text-gray-400" : "bg-white"}
+                  ${day.isToday ? "border-green-600 border-2" : ""}
+                  ${selectedDay?.date === day.date && selectedDay?.month === day.month ? "ring-2" : ""}
+                `}
               >
                 <div className="flex items-start justify-between">
-                  <span className={`text-sm font-medium h-6 w-6`}>
+                  <span className={`text-sm font-medium ${day.isToday ? "flex h-6 w-6 items-center justify-center" : ""}`}>
                     {day.date}
                   </span>
                 </div>
