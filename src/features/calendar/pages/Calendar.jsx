@@ -96,8 +96,24 @@ export default function Calendar() {
   return (
     <div className="flex-1 space-y-4 p-4 md:p-4 pt-6">
       <div className="flex items-center justify-between">
-        <div>
+        <div className="flex justify-center items-center space-x-4">
+          <button 
+            onClick={previousMonth}
+            className="p-2 border border-gray-200 hover:bg-gray-100"
+          >
+            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="size-6">
+              <path strokeLinecap="round" strokeLinejoin="round" d="M15.75 19.5 8.25 12l7.5-7.5" />
+            </svg>
+          </button>
           <h2 className="text-3xl font-bold tracking-tight">{months[currentDate.getMonth()]} {currentDate.getFullYear()}</h2>
+          <button
+            onClick={nextMonth}
+            className="p-2 border border-gray-200 hover:bg-gray-100"
+          >
+            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="size-6">
+              <path strokeLinecap="round" strokeLinejoin="round" d="m8.25 4.5 7.5 7.5-7.5 7.5" />
+            </svg>
+          </button>
         </div>
         <div className="flex items-center gap-2">
           <button className="border border-gray-200 flex justify-center items-center py-2 px-3 hover:bg-gray-200">
