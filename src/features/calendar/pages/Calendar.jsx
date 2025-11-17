@@ -79,12 +79,26 @@ export default function Calendar() {
 
   const calendarDays = getDaysInMonth(currentDate)
 
+  const previousMonth = () => {
+    setCurrentDate(new Date(currentDate.getFullYear(), currentDate.getMonth() - 1, 1))
+  }
+
+  const nextMonth = () => {
+    setCurrentDate(new Date(currentDate.getFullYear(), currentDate.getMonth() + 1, 1))
+  }
+
+  const goToDay = () => {
+    setCurrentDate(new Date())
+  }
+
   const getTotalForDay = (day) => day.transactions.reduce((sum, t) => sum + t.amount, 0) 
 
   return (
     <div className="flex-1 space-y-4 p-4 md:p-4 pt-6">
       <div className="flex items-center justify-between">
-        <h2 className="text-3xl font-bold tracking-tight">{months[currentDate.getMonth()]} {currentDate.getFullYear()}</h2>
+        <div>
+          <h2 className="text-3xl font-bold tracking-tight">{months[currentDate.getMonth()]} {currentDate.getFullYear()}</h2>
+        </div>
         <div className="flex items-center gap-2">
           <button className="border border-gray-200 flex justify-center items-center py-2 px-3 hover:bg-gray-200">
             <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="size-5 text-gray-600 mr-1">
@@ -111,11 +125,12 @@ export default function Calendar() {
 
             return (
               <button
-                key={index} 
+                key={index}
+                onClick={() => setSelectedDay(day)}
                 className={`min-h-[100px] border border-gray-200 p-2 hover:shadow-md text-left transition-all
                   ${!day.isCurrentMonth ? "bg-gray-100 text-gray-400" : "bg-white"}
                   ${day.isToday ? "border-green-600 border-2" : ""}
-                  ${selectedDay?.date === day.date && selectedDay?.month === day.month ? "ring-2" : ""}
+                  ${selectedDay?.date === day.date && selectedDay?.month === day.month ? "ring-2 ring-green-600" : ""}
                 `}
               >
                 <div className="flex items-start justify-between">
