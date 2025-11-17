@@ -25,7 +25,7 @@ export default function UpdateBalanceDash({ isOpen, setIsOpen }) {
                 </div>
                 <div className="flex gap-3">
                     <button className="border border-gray-200 px-3 py-2 hover:bg-gray-200 hover:cursor-pointer" onClick={() => setIsOpen(false)}>Cerrar</button>
-                    <button className="border border-gray-200 px-3 py-2 text-gray-100 bg-emerald-500 hover:cursor-pointer hover:bg-emerald-600" onClick={() => setIsOpen(false)}>Guardar</button>
+                    <button className="border border-gray-200 px-3 py-2 text-gray-100 bg-emerald-600 hover:cursor-pointer hover:bg-emerald-700" onClick={() => setIsOpen(false)}>Guardar</button>
                 </div>
             </DialogPanel>
         </Dialog>
