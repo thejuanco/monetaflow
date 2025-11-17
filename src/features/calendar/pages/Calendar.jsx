@@ -6,6 +6,7 @@ export default function Calendar() {
 
   const [selectedDay, setSelectedDay] = useState(null)
   const [currentDate, setCurrentDate] = useState(new Date(2025, 10, 17))
+
   const months = [
     "Enero",
     "Febrero",
@@ -29,7 +30,7 @@ export default function Calendar() {
     const firstDay = new Date(year, month, 1)
     const lastDay = new Date(year, month + 1, 0)
     const daysInMonth = lastDay.getDate()
-    const startingDayOfWeak = firstDay.getDate()
+    const startingDayOfWeak = firstDay.getDay()
 
     const days = []
 
