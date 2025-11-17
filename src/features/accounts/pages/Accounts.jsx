@@ -1,4 +1,6 @@
-export default function Accounst() {
+import TabsAccounts from "../components/TabsAccounts"
+
+export default function Accounts() {
   return (
     <div className="flex-1 space-y-4 p-4 md:p-4 pt-6">
       <div className="flex items-center justify-between">
@@ -67,6 +69,8 @@ export default function Accounst() {
           <p className="text-xs text-gray-500">Cuentas activas</p>
         </div>
       </div>
+
+      <TabsAccounts/>
     </div>
   )
 }
