@@ -1,5 +1,6 @@
 import { useState } from "react"
 import { NavLink, Link } from "react-router"
+import ProfileDropDown from "./ProfileDropDown"
 
 export default function SidebarLayout() {
     const [isSidebarOpen, setIsSidebardOpen] = useState(false)
@@ -8,14 +9,17 @@ export default function SidebarLayout() {
     return (
         <>
             <header className="sticky bg-white top-0 z-30 flex h-16 items-center gap-4 border-b border-gray-200 px-4 md:hidden">
-                <button
-                    onClick={toggleMenu}
-                    className="transition-colors"
-                >
-                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="size-6">
-                        <path strokeLinecap="round" strokeLinejoin="round" d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5" />
-                    </svg>
-                </button>
+                <div className="flex justify-between w-full">
+                    <button
+                        onClick={toggleMenu}
+                        className="transition-colors p-2"
+                    >
+                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="size-6">
+                            <path strokeLinecap="round" strokeLinejoin="round" d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5" />
+                        </svg>
+                    </button>
+                    <ProfileDropDown/>
+                </div>
 
                 <aside
                     className={`

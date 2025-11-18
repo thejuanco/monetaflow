@@ -4,7 +4,7 @@ import { useNavigate } from 'react-router'
 export default function ProfileDropDown() {
     let navigate = useNavigate()
     return (
-        <Popover className={"mr-11"}>
+        <Popover className={"md:mr-11 mr-4"}>
             <PopoverButton className="focus:outline-none border border-gray-200 px-6 py-2 data-active:text-gray-900 data-focus:outline data-focus:outline-white data-hover:text-gray-700">
                 Perfil
             </PopoverButton>
