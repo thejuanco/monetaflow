@@ -127,12 +127,30 @@ export default function TransactionsList() {
     <div className="w-full border p-5 border-gray-200">
       <h1 className="font-semibold text-2xl">Todas las transacciones</h1>
       <p className="text-gray-600">{transactionsData.length} transacciones encontradas</p>
-      <div className="mt-4 border border-gray-200 p-5 mb-4">
-        {transactionsData.map((transaction, index) => (
-          <div key={index}>
-            {transaction.description}
-          </div>
-        ))}
+      <div className="mt-4 p-5 mb-4 border border-gray-200">
+        <table className="w-full space-x-4">
+          <thead>
+            <tr>
+              <th className="font-normal text-gray-500">Fecha</th>
+              <th className="font-normal text-gray-500">Descripción</th>
+              <th className="font-normal text-gray-500">Categoria</th>
+              <th className="font-normal text-gray-500">Cuenta</th>
+              <th className="font-normal text-gray-500">Monto</th>
+              <th className="font-normal text-gray-500">Acciones</th>
+            </tr>
+          </thead>
+          <tbody>
+            {transactionsData.map((transaction, index) => (
+              <tr key={index}>
+                <td>{transaction.date}</td>
+                <td>{transaction.description}</td>
+                <td>{transaction.category}</td>
+                <td>{transaction.account}</td>
+                <td>{transaction.amount}</td>
+              </tr>
+            ))}
+          </tbody>
+        </table>
       </div>
       <div className="flex justify-between">
         <p className="text-gray-600 text-sm">{`Mostrando 10 de ${transactionsData.length} transacciones`}</p>
