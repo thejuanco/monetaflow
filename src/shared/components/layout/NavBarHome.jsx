@@ -1,6 +1,10 @@
+import { useState } from "react";
 import { Link } from "react-router";
 
 export default function NavBarHome() {
+  const [menuOpen, setMenuOpen] = useState(false)
+  const toogleMenu = () => setMenuOpen(!menuOpen)
+
   return (
     <nav className="w-full sticky top-0 z-50 border-b border-gray-300 backdrop-blur">
       <div className="flex h-14 items-center px-4 md:px-8">
@@ -12,7 +16,15 @@ export default function NavBarHome() {
             Moneta-flow
           </Link>
         </div>
-        <div className="flex flex-1 items-center justify-center space-x-2 md:justify-end">
+        <button
+          onClick={toogleMenu}
+          className="block md:hidden focus:outline-none"
+        >
+          <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="size-6">
+            <path strokeLinecap="round" strokeLinejoin="round" d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5" />
+          </svg>
+        </button>
+        <div className={`md:flex md:space-x-4 ${menuOpen ? 'block' : 'hidden'} absolute md:static top-16 right-6 md:top-0 bg-gray-100 md:bg-transparent rounded-lg p-4 md:p-0 shadow-lg md:shadow-none`}>
           <nav className="flex items-center space-x-4 text-sm font-medium">
             <Link to="/auth/signup" className="flex items-center font-medium py-2 px-4 rounded-full hover:bg-gray-200 transition-transform duration-300 transform hover:scale-105">
               Crear cuenta
