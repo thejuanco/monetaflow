@@ -1,4 +1,5 @@
 import { useState } from "react"
+import ModalFormTransaction from "../components/ModalFormTransaction"
 
 export default function Calendar() {
   const today = new Date()
@@ -6,6 +7,8 @@ export default function Calendar() {
 
   const [selectedDay, setSelectedDay] = useState(null)
   const [currentDate, setCurrentDate] = useState(new Date(2025, 10, 17))
+  //States dialog
+  const [isModalOpen, setIsModalOpen] = useState(false)
 
   const months = [
     "Enero",
@@ -116,7 +119,10 @@ export default function Calendar() {
           </button>
         </div>
         <div className="flex items-center gap-2">
-          <button className="border border-gray-200 flex justify-center items-center py-2 px-3 hover:bg-gray-200">
+          <button
+            onClick={() => setIsModalOpen(true)}
+            className="border border-gray-200 flex justify-center items-center py-2 px-3 hover:bg-gray-200"
+          >
             <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="size-5 text-gray-600 mr-1">
               <path strokeLinecap="round" strokeLinejoin="round" d="M12 4.5v15m7.5-7.5h-15" />
             </svg>
@@ -159,6 +165,12 @@ export default function Calendar() {
           })}
         </div>
       </div>
+
+      {/*Modal*/}
+      <ModalFormTransaction
+        isModalOpen={isModalOpen}
+        setIsModalOpen={setIsModalOpen}
+      />
 
     </div>
   )
