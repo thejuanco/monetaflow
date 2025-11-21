@@ -6,26 +6,26 @@ export default function AllAccounts() {
                     <div className="flex items-center gap-2">
                         <div className="rounded-full bg-gray-100 p-1">
                             <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="size-5 text-emerald-700">
-                                <path strokeLinecap="round" strokeLinejoin="round" d="M20.25 6.375c0 2.278-3.694 4.125-8.25 4.125S3.75 8.653 3.75 6.375m16.5 0c0-2.278-3.694-4.125-8.25-4.125S3.75 4.097 3.75 6.375m16.5 0v11.25c0 2.278-3.694 4.125-8.25 4.125s-8.25-1.847-8.25-4.125V6.375m16.5 0v3.75m-16.5-3.75v3.75m16.5 0v3.75C20.25 16.153 16.556 18 12 18s-8.25-1.847-8.25-4.125v-3.75m16.5 0c0 2.278-3.694 4.125-8.25 4.125s-8.25-1.847-8.25-4.125" />
+                                <path strokeLinecap="round" strokeLinejoin="round" d="M2.25 8.25h19.5M2.25 9h19.5m-16.5 5.25h6m-6 2.25h3m-3.75 3h15a2.25 2.25 0 0 0 2.25-2.25V6.75A2.25 2.25 0 0 0 19.5 4.5h-15a2.25 2.25 0 0 0-2.25 2.25v10.5A2.25 2.25 0 0 0 4.5 19.5Z" />
                             </svg>
                         </div>
-                        <h2 className="font-medium">Alimentación</h2>
+                        <h2 className="font-medium">Cuenta Principal</h2>
                     </div>
-                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="size-8 hover:bg-gray-200 p-1">
-                        <path strokeLinecap="round" strokeLinejoin="round" d="M6.75 12a.75.75 0 1 1-1.5 0 .75.75 0 0 1 1.5 0ZM12.75 12a.75.75 0 1 1-1.5 0 .75.75 0 0 1 1.5 0ZM18.75 12a.75.75 0 1 1-1.5 0 .75.75 0 0 1 1.5 0Z" />
-                    </svg>
+                    <span className="border border-gray-200 py-1 px-2">
+                        <p className="text-sm">BBVA</p>
+                    </span>
                 </div>
-                <p className="text-sm text-gray-500">Mensual · Esencial</p>
+                <p className="text-sm text-gray-500">Principal • ES91 2100 0418 4502 0005 1332</p>
                 <div className="space-y-1 w-full">
                     <div className="flex justify-between text-sm">
-                        <span className="text-gray-600">$350 / $500</span>
-                        <span className="font-medium">70%</span>
+                        <span className="text-gray-800 text-2xl font-semibold">$12,580.00</span>
                     </div>
-                    <progress value={350} max={500} className="h-2 w-full overflow-hidden" />
                 </div>
-                <div className="flex justify-between text-sm">
-                    <p>$120 esta semana</p>
-                    <p className="text-gray-600 text-xs">$150 disponibles</p>
+                <div className="flex flex-row space-x-2">
+                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="size-5 text-emerald-600">
+                        <path strokeLinecap="round" strokeLinejoin="round" d="M4.5 10.5 12 3m0 0 7.5 7.5M12 3v18" />
+                    </svg>
+                    <p className="text-sm text-gray-600">$120 esta semana</p>
                 </div>
             </div>
 
@@ -34,26 +34,26 @@ export default function AllAccounts() {
                     <div className="flex items-center gap-2">
                         <div className="rounded-full bg-gray-100 p-1">
                             <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="size-5 text-emerald-700">
-                                <path strokeLinecap="round" strokeLinejoin="round" d="M20.25 6.375c0 2.278-3.694 4.125-8.25 4.125S3.75 8.653 3.75 6.375m16.5 0c0-2.278-3.694-4.125-8.25-4.125S3.75 4.097 3.75 6.375m16.5 0v11.25c0 2.278-3.694 4.125-8.25 4.125s-8.25-1.847-8.25-4.125V6.375m16.5 0v3.75m-16.5-3.75v3.75m16.5 0v3.75C20.25 16.153 16.556 18 12 18s-8.25-1.847-8.25-4.125v-3.75m16.5 0c0 2.278-3.694 4.125-8.25 4.125s-8.25-1.847-8.25-4.125" />
+                                <path strokeLinecap="round" strokeLinejoin="round" d="M2.25 8.25h19.5M2.25 9h19.5m-16.5 5.25h6m-6 2.25h3m-3.75 3h15a2.25 2.25 0 0 0 2.25-2.25V6.75A2.25 2.25 0 0 0 19.5 4.5h-15a2.25 2.25 0 0 0-2.25 2.25v10.5A2.25 2.25 0 0 0 4.5 19.5Z" />
                             </svg>
                         </div>
-                        <h2 className="font-medium">Alimentación</h2>
+                        <h2 className="font-medium">Tarjeta de Crédito</h2>
                     </div>
-                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="size-8 hover:bg-gray-200 p-1">
-                        <path strokeLinecap="round" strokeLinejoin="round" d="M6.75 12a.75.75 0 1 1-1.5 0 .75.75 0 0 1 1.5 0ZM12.75 12a.75.75 0 1 1-1.5 0 .75.75 0 0 1 1.5 0ZM18.75 12a.75.75 0 1 1-1.5 0 .75.75 0 0 1 1.5 0Z" />
-                    </svg>
+                    <span className="border border-gray-200 py-1 px-2">
+                        <p className="text-sm">BBVA</p>
+                    </span>
                 </div>
-                <p className="text-sm text-gray-500">Mensual · Esencial</p>
+                <p className="text-sm text-gray-500">Principal • ES91 2100 0418 4502 0005 1332</p>
                 <div className="space-y-1 w-full">
                     <div className="flex justify-between text-sm">
-                        <span className="text-gray-600">$350 / $500</span>
-                        <span className="font-medium">70%</span>
+                        <span className="text-red-600 text-2xl font-semibold">$-1,245.30</span>
                     </div>
-                    <progress value={350} max={500} className="h-2 w-full overflow-hidden" />
                 </div>
-                <div className="flex justify-between text-sm">
-                    <p>$120 esta semana</p>
-                    <p className="text-gray-600 text-xs">$150 disponibles</p>
+                <div className="flex flex-row space-x-2">
+                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="size-5 text-red-500">
+                        <path strokeLinecap="round" strokeLinejoin="round" d="M15.75 17.25 12 21m0 0-3.75-3.75M12 21V3" />
+                    </svg>
+                    <p className="text-sm text-gray-600">Limite: $5,000 . Disponible: $3,754.00</p>
                 </div>
             </div>
 
@@ -62,26 +62,26 @@ export default function AllAccounts() {
                     <div className="flex items-center gap-2">
                         <div className="rounded-full bg-gray-100 p-1">
                             <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="size-5 text-emerald-700">
-                                <path strokeLinecap="round" strokeLinejoin="round" d="M20.25 6.375c0 2.278-3.694 4.125-8.25 4.125S3.75 8.653 3.75 6.375m16.5 0c0-2.278-3.694-4.125-8.25-4.125S3.75 4.097 3.75 6.375m16.5 0v11.25c0 2.278-3.694 4.125-8.25 4.125s-8.25-1.847-8.25-4.125V6.375m16.5 0v3.75m-16.5-3.75v3.75m16.5 0v3.75C20.25 16.153 16.556 18 12 18s-8.25-1.847-8.25-4.125v-3.75m16.5 0c0 2.278-3.694 4.125-8.25 4.125s-8.25-1.847-8.25-4.125" />
+                                <path strokeLinecap="round" strokeLinejoin="round" d="M2.25 8.25h19.5M2.25 9h19.5m-16.5 5.25h6m-6 2.25h3m-3.75 3h15a2.25 2.25 0 0 0 2.25-2.25V6.75A2.25 2.25 0 0 0 19.5 4.5h-15a2.25 2.25 0 0 0-2.25 2.25v10.5A2.25 2.25 0 0 0 4.5 19.5Z" />
                             </svg>
                         </div>
-                        <h2 className="font-medium">Alimentación</h2>
+                        <h2 className="font-medium">Cuenta de Ahorros</h2>
                     </div>
-                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="size-8 hover:bg-gray-200 p-1">
-                        <path strokeLinecap="round" strokeLinejoin="round" d="M6.75 12a.75.75 0 1 1-1.5 0 .75.75 0 0 1 1.5 0ZM12.75 12a.75.75 0 1 1-1.5 0 .75.75 0 0 1 1.5 0ZM18.75 12a.75.75 0 1 1-1.5 0 .75.75 0 0 1 1.5 0Z" />
-                    </svg>
+                    <span className="border border-gray-200 py-1 px-2">
+                        <p className="text-sm">BBVA</p>
+                    </span>
                 </div>
-                <p className="text-sm text-gray-500">Mensual · Esencial</p>
+                <p className="text-sm text-gray-500">Principal • ES91 2100 0418 4502 0005 1332</p>
                 <div className="space-y-1 w-full">
                     <div className="flex justify-between text-sm">
-                        <span className="text-gray-600">$350 / $500</span>
-                        <span className="font-medium">70%</span>
+                        <span className="text-gray-800 text-2xl font-semibold">$25,340.00</span>
                     </div>
-                    <progress value={350} max={500} className="h-2 w-full overflow-hidden" />
                 </div>
-                <div className="flex justify-between text-sm">
-                    <p>$120 esta semana</p>
-                    <p className="text-gray-600 text-xs">$150 disponibles</p>
+                <div className="flex flex-row space-x-2">
+                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="size-5 text-emerald-600">
+                        <path strokeLinecap="round" strokeLinejoin="round" d="M4.5 10.5 12 3m0 0 7.5 7.5M12 3v18" />
+                    </svg>
+                    <p className="text-sm text-gray-600">$500 este mes</p>
                 </div>
             </div>
 
@@ -90,26 +90,26 @@ export default function AllAccounts() {
                     <div className="flex items-center gap-2">
                         <div className="rounded-full bg-gray-100 p-1">
                             <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="size-5 text-emerald-700">
-                                <path strokeLinecap="round" strokeLinejoin="round" d="M20.25 6.375c0 2.278-3.694 4.125-8.25 4.125S3.75 8.653 3.75 6.375m16.5 0c0-2.278-3.694-4.125-8.25-4.125S3.75 4.097 3.75 6.375m16.5 0v11.25c0 2.278-3.694 4.125-8.25 4.125s-8.25-1.847-8.25-4.125V6.375m16.5 0v3.75m-16.5-3.75v3.75m16.5 0v3.75C20.25 16.153 16.556 18 12 18s-8.25-1.847-8.25-4.125v-3.75m16.5 0c0 2.278-3.694 4.125-8.25 4.125s-8.25-1.847-8.25-4.125" />
+                                <path strokeLinecap="round" strokeLinejoin="round" d="M2.25 8.25h19.5M2.25 9h19.5m-16.5 5.25h6m-6 2.25h3m-3.75 3h15a2.25 2.25 0 0 0 2.25-2.25V6.75A2.25 2.25 0 0 0 19.5 4.5h-15a2.25 2.25 0 0 0-2.25 2.25v10.5A2.25 2.25 0 0 0 4.5 19.5Z" />
                             </svg>
                         </div>
-                        <h2 className="font-medium">Alimentación</h2>
+                        <h2 className="font-medium">Cuenta Principal</h2>
                     </div>
-                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="size-8 hover:bg-gray-200 p-1">
-                        <path strokeLinecap="round" strokeLinejoin="round" d="M6.75 12a.75.75 0 1 1-1.5 0 .75.75 0 0 1 1.5 0ZM12.75 12a.75.75 0 1 1-1.5 0 .75.75 0 0 1 1.5 0ZM18.75 12a.75.75 0 1 1-1.5 0 .75.75 0 0 1 1.5 0Z" />
-                    </svg>
+                    <span className="border border-gray-200 py-1 px-2">
+                        <p className="text-sm">BBVA</p>
+                    </span>
                 </div>
-                <p className="text-sm text-gray-500">Mensual · Esencial</p>
+                <p className="text-sm text-gray-500">Principal • ES91 2100 0418 4502 0005 1332</p>
                 <div className="space-y-1 w-full">
                     <div className="flex justify-between text-sm">
-                        <span className="text-gray-600">$350 / $500</span>
-                        <span className="font-medium">70%</span>
+                        <span className="text-gray-800 text-2xl font-semibold">$12,580.00</span>
                     </div>
-                    <progress value={350} max={500} className="h-2 w-full overflow-hidden" />
                 </div>
-                <div className="flex justify-between text-sm">
-                    <p>$120 esta semana</p>
-                    <p className="text-gray-600 text-xs">$150 disponibles</p>
+                <div className="flex flex-row space-x-2">
+                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="size-5 text-emerald-600">
+                        <path strokeLinecap="round" strokeLinejoin="round" d="M4.5 10.5 12 3m0 0 7.5 7.5M12 3v18" />
+                    </svg>
+                    <p className="text-sm text-gray-600">$120 esta semana</p>
                 </div>
             </div>
 
@@ -118,26 +118,26 @@ export default function AllAccounts() {
                     <div className="flex items-center gap-2">
                         <div className="rounded-full bg-gray-100 p-1">
                             <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="size-5 text-emerald-700">
-                                <path strokeLinecap="round" strokeLinejoin="round" d="M20.25 6.375c0 2.278-3.694 4.125-8.25 4.125S3.75 8.653 3.75 6.375m16.5 0c0-2.278-3.694-4.125-8.25-4.125S3.75 4.097 3.75 6.375m16.5 0v11.25c0 2.278-3.694 4.125-8.25 4.125s-8.25-1.847-8.25-4.125V6.375m16.5 0v3.75m-16.5-3.75v3.75m16.5 0v3.75C20.25 16.153 16.556 18 12 18s-8.25-1.847-8.25-4.125v-3.75m16.5 0c0 2.278-3.694 4.125-8.25 4.125s-8.25-1.847-8.25-4.125" />
+                                <path strokeLinecap="round" strokeLinejoin="round" d="M2.25 8.25h19.5M2.25 9h19.5m-16.5 5.25h6m-6 2.25h3m-3.75 3h15a2.25 2.25 0 0 0 2.25-2.25V6.75A2.25 2.25 0 0 0 19.5 4.5h-15a2.25 2.25 0 0 0-2.25 2.25v10.5A2.25 2.25 0 0 0 4.5 19.5Z" />
                             </svg>
                         </div>
-                        <h2 className="font-medium">Alimentación</h2>
+                        <h2 className="font-medium">Cuenta Principal</h2>
                     </div>
-                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="size-8 hover:bg-gray-200 p-1">
-                        <path strokeLinecap="round" strokeLinejoin="round" d="M6.75 12a.75.75 0 1 1-1.5 0 .75.75 0 0 1 1.5 0ZM12.75 12a.75.75 0 1 1-1.5 0 .75.75 0 0 1 1.5 0ZM18.75 12a.75.75 0 1 1-1.5 0 .75.75 0 0 1 1.5 0Z" />
-                    </svg>
+                    <span className="border border-gray-200 py-1 px-2">
+                        <p className="text-sm">BBVA</p>
+                    </span>
                 </div>
-                <p className="text-sm text-gray-500">Mensual · Esencial</p>
+                <p className="text-sm text-gray-500">Principal • ES91 2100 0418 4502 0005 1332</p>
                 <div className="space-y-1 w-full">
                     <div className="flex justify-between text-sm">
-                        <span className="text-gray-600">$350 / $500</span>
-                        <span className="font-medium">70%</span>
+                        <span className="text-gray-800 text-2xl font-semibold">$12,580.00</span>
                     </div>
-                    <progress value={350} max={500} className="h-2 w-full overflow-hidden" />
                 </div>
-                <div className="flex justify-between text-sm">
-                    <p>$120 esta semana</p>
-                    <p className="text-gray-600 text-xs">$150 disponibles</p>
+                <div className="flex flex-row space-x-2">
+                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="size-5 text-emerald-600">
+                        <path strokeLinecap="round" strokeLinejoin="round" d="M4.5 10.5 12 3m0 0 7.5 7.5M12 3v18" />
+                    </svg>
+                    <p className="text-sm text-gray-600">$120 esta semana</p>
                 </div>
             </div>
 
