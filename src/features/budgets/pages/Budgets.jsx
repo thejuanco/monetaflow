@@ -1,13 +1,19 @@
+import { useState } from "react"
 import TabsBudgets from "../components/TabsBudgets"
+import ModalFormAddBudget from "../components/ModalFormAddBudget"
 
 export default function Budgets() {
+  const [isModalOpen, setIsModalOpen] = useState(false)
 
   return (
     <div className="flex-1 space-y-4 p-4 md:p-4 pt-6">
       <div className="flex items-center justify-between">
         <h2 className="text-3xl font-bold tracking-tight">Presupuestos</h2>
         <div className="flex items-center gap-2">
-          <button className="border border-gray-200 flex justify-center items-center py-2 px-3 hover:bg-gray-200">
+          <button
+            onClick={() => setIsModalOpen(true)}
+            className="border border-gray-200 flex justify-center items-center py-2 px-3 hover:bg-gray-200"
+          >
             <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="size-5 text-gray-600 mr-1">
               <path strokeLinecap="round" strokeLinejoin="round" d="M12 4.5v15m7.5-7.5h-15" />
             </svg>
@@ -74,6 +80,13 @@ export default function Budgets() {
 
       {/*Tabs */}
       <TabsBudgets/>
+
+      {/*Modal*/}
+      <ModalFormAddBudget
+        isModalOpen={isModalOpen}
+        setIsModalOpen={setIsModalOpen}
+      />
+
     </div>
   )
 }
