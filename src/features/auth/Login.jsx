@@ -44,7 +44,7 @@ export default function Login() {
     <>
       <NavBarAuth />
       <div className="flex min-h-screen flex-col items-center justify-center p-1">
-        <div className="w-full max-w-md p-6 rounded-xl shadow border border-gray-200">
+        <div className="md:w-1/4 sm:w-1/2 lg:w-1/4 sm:m-10 p-6 rounded-xl shadow border border-gray-200">
           <h1 className="text-black tracking-tighter font-semibold text-2xl">
             Tu dinero bajo control
           </h1>
