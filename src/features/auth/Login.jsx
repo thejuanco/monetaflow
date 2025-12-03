@@ -2,9 +2,12 @@ import { useState } from "react";
 import { Link, useNavigate } from "react-router";
 import { useForm } from "react-hook-form";
 import NavBarAuth from "./components/NavBarAuth";
+import Spinner from "../../shared/components/layout/Spinner";
 
 export default function Login() {
   const [isVisible, setIsVisible] = useState(false);
+  const [loading, setLoading] = useState(false)
+
   const {
     register,
     handleSubmit,
@@ -16,10 +19,12 @@ export default function Login() {
   const onSubmit = (data) => {
     try {
       console.log(data);
+      setLoading(true)
       //Simulando el login
       //TODO: Conexion con API
       setTimeout(() => {
         navigate("/dashboard")
+        setLoading(false)
       }, 3000)
     } catch (error) {
       const status = error.message;
@@ -131,7 +136,7 @@ export default function Login() {
               </div>
             </div>
             <button className="bg-emerald-700 text-white w-full mt-8 py-2 font-medium rounded-lg hover:bg-emerald-600">
-              Iniciar Sesión
+              {loading ? <Spinner/> : "Iniciar Sesión"}
             </button>
           </form>
           <div className="flex justify-center">
