@@ -186,16 +186,18 @@ export default function TransactionsList() {
             </tr>
           </thead>
           <tbody>
-            {transactionsData.map((transaction, index) => (
+            {transactionsData.slice(0, 9).map((transaction, index) => (
               <tr 
                 key={index}
                 className="text-center hover:bg-emerald-50 w-full border-b border-gray-200"
               >
                 <td className="py-4">{transaction.date}</td>
                 <td className="">{transaction.description}</td>
-                <td
-                  className="text-sm font-medium "
-                >{transaction.category}</td>
+                <td>
+                  <span className="px-3 py-0.5 font-semibold rounded-full border border-gray-300 text-gray-800 text-xs">
+                    {transaction.category}
+                  </span>
+                </td>
                 <td>{transaction.account}</td>
                 <td
                   className={`${transaction.amount > 0 ? "text-emerald-700" : "text-red-600"} `}
