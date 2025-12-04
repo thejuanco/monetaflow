@@ -5,7 +5,7 @@ import NavBarAuth from "./components/NavBarAuth";
 import Spinner from "../../shared/components/layout/Spinner";
 
 export default function Login() {
-  const [isVisible, setIsVisible] = useState(false);
+  const [isVisible, setIsVisible] = useState(true);
   const [loading, setLoading] = useState(false)
 
   const {
