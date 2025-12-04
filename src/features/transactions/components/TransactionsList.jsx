@@ -1,3 +1,4 @@
+import DropDownOptionsList from "./DropDownOptionList"
 
 export default function TransactionsList() {
 
@@ -92,6 +93,51 @@ export default function TransactionsList() {
       amount: 350.0,
       status: "completed",
     },
+    {
+      id: "11",
+      date: "2025-03-01",
+      description: "Ingreso Freelance 11",
+      category: "Ingresos",
+      account: "Cuenta Corriente",
+      amount: 350.0,
+      status: "completed",
+    },
+    {
+      id: "12",
+      date: "2025-03-01",
+      description: "Ingreso Freelance 12",
+      category: "Ingresos",
+      account: "Cuenta Corriente",
+      amount: 350.0,
+      status: "completed",
+    },
+    {
+      id: "13",
+      date: "2025-03-01",
+      description: "Ingreso Freelance 13",
+      category: "Ingresos",
+      account: "Cuenta Corriente",
+      amount: 350.0,
+      status: "completed",
+    },
+    {
+      id: "14",
+      date: "2025-03-01",
+      description: "Ingreso Freelance 14",
+      category: "Ingresos",
+      account: "Cuenta Corriente",
+      amount: 350.0,
+      status: "completed",
+    },
+    {
+      id: "15",
+      date: "2025-03-01",
+      description: "Ingreso Freelance 15",
+      category: "Ingresos",
+      account: "Cuenta Corriente",
+      amount: 350.0,
+      status: "completed",
+    },
   ]
 
   // Categorías para el filtro y para añadir transacciones
@@ -128,7 +174,7 @@ export default function TransactionsList() {
       <h1 className="font-semibold text-2xl">Todas las transacciones</h1>
       <p className="text-gray-600">{transactionsData.length} transacciones encontradas</p>
       <div className="mt-4 p-5 mb-4 border border-gray-200">
-        <table className="w-full space-x-4">
+        <table className="w-full space-x-4 ">
           <thead>
             <tr>
               <th className="font-normal text-gray-500">Fecha</th>
@@ -141,12 +187,24 @@ export default function TransactionsList() {
           </thead>
           <tbody>
             {transactionsData.map((transaction, index) => (
-              <tr key={index}>
-                <td>{transaction.date}</td>
-                <td>{transaction.description}</td>
-                <td>{transaction.category}</td>
+              <tr 
+                key={index}
+                className="text-center hover:bg-emerald-50 w-full border-b border-gray-200"
+              >
+                <td className="py-4">{transaction.date}</td>
+                <td className="">{transaction.description}</td>
+                <td
+                  className="text-sm font-medium "
+                >{transaction.category}</td>
                 <td>{transaction.account}</td>
-                <td>{transaction.amount}</td>
+                <td
+                  className={`${transaction.amount > 0 ? "text-emerald-700" : "text-red-600"} `}
+                >{transaction.amount}</td>
+                <td className="py-4">
+                  <button className="flex justify-center items-center w-full">
+                    <DropDownOptionsList />
+                  </button>
+                </td>
               </tr>
             ))}
           </tbody>
