@@ -1,5 +1,6 @@
 import { useState } from "react"
 import ModalFormTransaction from "../components/ModalFormTransaction"
+import SummaryMonth from "../components/SummaryMonth"
 
 export default function Calendar() {
   const today = new Date()
@@ -148,7 +149,7 @@ export default function Calendar() {
             return (
               <button
                 key={index}
-                onClick={() => setSelectedDay(day)}
+                onClick={() => { console.log(day); setSelectedDay(day)}}
                 className={`min-h-[100px] border border-gray-200 p-2 hover:shadow-md text-left transition-all
                   ${!day.isCurrentMonth ? "bg-gray-100 text-gray-400" : "bg-white"}
                   ${day.isToday ? "border-green-600 border-2" : ""}
@@ -165,6 +166,8 @@ export default function Calendar() {
           })}
         </div>
       </div>
+
+      <SummaryMonth/>
 
       {/*Modal*/}
       <ModalFormTransaction
