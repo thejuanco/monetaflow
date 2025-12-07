@@ -1,6 +1,7 @@
 import { useState } from "react"
 import ModalFormTransaction from "../components/ModalFormTransaction"
 import SummaryMonth from "../components/SummaryMonth"
+import NextPayments from "../components/NextPayments"
 
 export default function Calendar() {
   const today = new Date()
@@ -168,6 +169,7 @@ export default function Calendar() {
       </div>
 
       <SummaryMonth/>
+      <NextPayments/>
 
       {/*Modal*/}
       <ModalFormTransaction

@@ -1,5 +1,3 @@
-import React from 'react'
-
 export default function SummaryMonth() {
     return (
         <div className="p-6 border border-gray-200 ">
