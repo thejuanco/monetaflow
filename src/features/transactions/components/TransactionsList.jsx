@@ -167,7 +167,13 @@ export default function TransactionsList() {
     { value: "efectivo", label: "Efectivo" },
   ]
 
+  const prevListTransactions = () => {
 
+  }
+
+  const nextListTransactions = () => {
+
+  }
 
   return (
     <div className="w-full border p-5 border-gray-200">
@@ -215,10 +221,16 @@ export default function TransactionsList() {
       <div className="flex justify-between">
         <p className="text-gray-600 text-sm">{`Mostrando 10 de ${transactionsData.length} transacciones`}</p>
         <div className="space-x-2">
-          <button className="border border-gray-200 py-2 px-3">
+          <button
+            onClick={prevListTransactions}
+            className="border border-gray-200 py-2 px-3"
+          >
             Anterior
           </button>
-          <button className="border border-gray-200 py-2 px-3">
+          <button 
+            onClick={nextListTransactions}
+            className="border border-gray-200 py-2 px-3"
+          >
             Siguiente
           </button>
         </div>
