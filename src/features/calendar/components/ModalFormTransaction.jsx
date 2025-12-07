@@ -8,7 +8,7 @@ export default function ModalFormTransaction({ isModalOpen, setIsModalOpen }) {
             transition
             className="fixed overflow-auto py-8 inset-0 flex w-screen items-center justify-center bg-black/40 transition duration-300 ease-out data-closed:opacity-0"
         >
-            <DialogPanel className="max-w-lg md:pt-20 bg-white p-8">
+            <DialogPanel className="max-w-lg sm:max-w-[500px] md:pt-20 bg-white p-8">
                 <DialogTitle className="font-medium text-xl">Nueva Transacción</DialogTitle>
                 <Description className="text-sm text-gray-500">Agrega una nueva transacción o pago programado</Description>
                 <div className="py-4">
