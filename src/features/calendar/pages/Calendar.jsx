@@ -4,11 +4,13 @@ import SummaryMonth from "../components/SummaryMonth"
 import NextPayments from "../components/NextPayments"
 
 export default function Calendar() {
-  const today = new Date()
-  const nowDay = today.getDate()
+  const actualDate = new Date()
+  const month = actualDate.getMonth()
+  const year = actualDate.getFullYear()
+  const today = actualDate.getDay()
 
   const [selectedDay, setSelectedDay] = useState(null)
-  const [currentDate, setCurrentDate] = useState(new Date(2025, 10, 17))
+  const [currentDate, setCurrentDate] = useState(new Date(year, month, today))
   //States dialog
   const [isModalOpen, setIsModalOpen] = useState(false)
 
