@@ -1,5 +1,4 @@
 import { Description, Dialog, DialogPanel, DialogTitle } from '@headlessui/react'
-import { useState } from 'react'
 
 export default function UpdateBalanceDash({ isOpen, setIsOpen }) {
     return (
@@ -23,7 +22,7 @@ export default function UpdateBalanceDash({ isOpen, setIsOpen }) {
                         />
                     </form>
                 </div>
-                <div className="flex gap-3">
+                <div className="flex justify-end gap-3">
                     <button className="border border-gray-200 px-3 py-2 hover:bg-gray-200 hover:cursor-pointer" onClick={() => setIsOpen(false)}>Cerrar</button>
                     <button className="border border-gray-200 px-3 py-2 text-gray-100 bg-emerald-600 hover:cursor-pointer hover:bg-emerald-700" onClick={() => setIsOpen(false)}>Guardar</button>
                 </div>
