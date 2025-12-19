@@ -74,7 +74,7 @@ export default function Calendar() {
       const key = `${year}-${month + 2}-${i}`
       days.push({
         date: i,
-        month,
+        month: month + 1,
         transactions: [],
         isCurrentMonth: false,
         isToday: false
