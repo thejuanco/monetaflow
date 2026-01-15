@@ -1,5 +1,6 @@
 //En este archivo se renderizan las pantallas dentro del dash del usuario
 import { Outlet } from "react-router"
+import { Toaster } from "sonner"
 import SidebarLayout from "./SidebarLayout"
 import NavbarLayout from "./NavbarLayout"
 
@@ -13,6 +14,7 @@ export default function DashboardLayout() {
           <Outlet />
         </main>
       </div>
+      <Toaster position="bottom-right"/>
     </div>
   )
 }
