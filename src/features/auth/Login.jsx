@@ -3,6 +3,7 @@ import { Link, useNavigate } from "react-router";
 import { useForm } from "react-hook-form";
 import NavBarAuth from "./components/NavBarAuth";
 import Spinner from "../../shared/components/layout/Spinner";
+import Badges from "../../shared/components/layout/Badges";
 
 export default function Login() {
   const [isVisible, setIsVisible] = useState(true);
