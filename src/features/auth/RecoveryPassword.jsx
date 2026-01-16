@@ -21,7 +21,7 @@ export default function RecoveryPassword() {
   return (
     <>
       <NavBarAuth />
-      <div className="flex justify-center items-center pt-12">
+      <div className="flex min-h-screen flex-col items-center justify-center p-1">
         <div className="md:w-1/4 sm:w-1/2 lg:w-1/4 sm:m-10 border border-gray-100 p-6 rounded-xl shadow">
           <h1 className="text-black font-semibold text-2xl">
             Tu dinero bajo control

@@ -7,7 +7,7 @@ export default function ConfirmEmail() {
   return (
     <>
       <NavBarAuth />
-      <div className="flex justify-center items-center mt-20">
+      <div className="flex min-h-screen flex-col items-center justify-center p-1">
         <div className="w-full max-w-md border border-gray-100 p-6 rounded-xl shadow">
           <h1 className="text-black tracking-tighter text-center font-bold text-2xl pt-8">
             Verifica tu correo electronico
