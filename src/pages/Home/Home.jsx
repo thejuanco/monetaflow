@@ -1,6 +1,7 @@
 import { Link } from "react-router";
 import NavBarHome from "../../shared/components/layout/NavBarHome";
 import FooterHome from "../../shared/components/layout/FooterHome";
+import Badges from "../../shared/components/layout/Badges";
 
 export default function Home() {
   return (
@@ -12,6 +13,7 @@ export default function Home() {
             <div className="grid gap-6 lg:grid-cols-2 lg:gap-12 xl:grid-cols-2">
               <div className="flex flex-col justify-center space-y-6">
                 <div className="space-y-2">
+                  <Badges />
                   <h1 className="text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl lg:text-6xl/none">
                     Administra tus finanzas con facilidad
                   </h1>
