@@ -80,12 +80,12 @@ export default function SidebarLayout() {
                 </aside>
             </header>
 
-            <aside className="hidden md:flex flex-col border-r border-gray-200">
-                <div className="h-14 flex items-center border-b border-gray-200 px-4">
+            <aside className="hidden md:flex flex-col border-r border-gray-200 h-screen overflow-hidden">
+                <div className="h-14 flex items-center border-b border-gray-200 px-4 flex-shrink-0">
                     <Link to={"/dashboard"} className="tracking-tight font-bold text-2xl text-emerald-600">Moneta</Link>
                 </div>
 
-                <nav className="flex-1 overflow-auto py-2 px-2 text-sm space-y-1">
+                <nav className="flex-1 overflow-y-auto py-2 px-2 text-sm space-y-1">
                     <NavLink to="/dashboard" end
                         className={({ isActive }) =>
                             `flex flex-row justify-start items-center px-2 py-1 cursor-pointer 
