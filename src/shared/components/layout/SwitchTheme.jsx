@@ -13,10 +13,10 @@ export default function SwitchTheme() {
 
   return (
     <div className="flex items-center justify-center">
-        <div className="relative flex items-center gap-1 founded-full p-1">
+        <div className="relative flex items-center gap-1 rounded-full border border-gray-100 p-1">
             <span
                 className={`
-                    absolute h-8 w-8 rounded-full bg-zinc-50 transition-all
+                    absolute h-8 w-8 rounded-full bg-zinc-200 transition-all
                     ${mode === "system" && "translate-x-0"}
                     ${mode === "light" && "translate-x-9"}   
                     ${mode === "dark" && "translate-x-[72px]"}   

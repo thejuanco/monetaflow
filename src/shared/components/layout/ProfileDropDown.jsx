@@ -35,7 +35,7 @@ export default function ProfileDropDown() {
                         </svg>
                         <p className="text-gray-900 text-start">Configuración</p>
                     </button>
-                    <div className="flex flex-col px-3 py-1 transition w-full hover:bg-gray-200 space-y-2">
+                    <div className="flex flex-col px-3 py-1 transition w-full space-y-2">
                         <SwitchTheme/>
                     </div>
                 </div>
