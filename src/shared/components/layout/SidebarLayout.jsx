@@ -8,7 +8,7 @@ export default function SidebarLayout() {
 
     return (
         <>
-            <header className="sticky bg-white top-0 z-30 flex h-16 items-center gap-4 border-b border-gray-200 px-4 md:hidden">
+            <header className="sticky bg-white top-0 z-30 flex h-16 items-center gap-4 border-b dark:border-gray-600 border-gray-200 px-4 md:hidden">
                 <div className="flex justify-between w-full">
                     <button
                         onClick={toggleMenu}
@@ -80,8 +80,8 @@ export default function SidebarLayout() {
                 </aside>
             </header>
 
-            <aside className="hidden md:flex flex-col border-r border-gray-200 h-screen overflow-hidden">
-                <div className="h-14 flex items-center border-b border-gray-200 px-4 flex-shrink-0">
+            <aside className="hidden md:flex flex-col border-r dark:border-gray-600 border-gray-200 h-full overflow-hidden">
+                <div className="h-14 flex items-center border-b dark:border-gray-600 border-gray-200 px-4 flex-shrink-0">
                     <Link to={"/dashboard"} className="tracking-tight font-bold text-2xl text-emerald-600">Moneta</Link>
                 </div>
 
