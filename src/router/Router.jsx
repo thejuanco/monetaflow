@@ -18,6 +18,8 @@ import Budgets from "../features/budgets/pages/Budgets";
 import Accounts from "../features/accounts/pages/Accounts";
 import Reports from "../features/reports/pages/Reports";
 import Calendar from "../features/calendar/pages/Calendar";
+import Profile from "../pages/Profile/Profile";
+import Settings from "../pages/Profile/Settings";
 
 export default function Router (){
     return (
@@ -39,6 +41,8 @@ export default function Router (){
                     <Route path="/dashboard/accounts" element={<Accounts/>}/>
                     <Route path="/dashboard/calendar" element={<Calendar/>}/>
                     <Route path="/dashboard/budgets" element={<Budgets/>}/>
+                    <Route path="/dashboard/profile" element={<Profile/>}/>
+                    <Route path="/dashboard/settings" element={<Settings/>}/>
                 </Route>
             </Routes>
         </BrowserRouter>
