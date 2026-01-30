@@ -1,5 +1,5 @@
 import { Switch } from "@headlessui/react"
-import { useState } from "react"
+import { useState, useEffect } from "react"
 import { 
     ComputerDesktopIcon,
     SunIcon,
@@ -7,9 +7,17 @@ import {
 } from '@heroicons/react/24/solid'
 
 export default function SwitchTheme() {
-    const [enabled, setEnabled] = useState(false)
     const [mode, setMode ] = useState("system")
     const modes = ["system", "light","dark"]
+
+    useEffect(() => {
+        if(mode === "dark"){
+            document.querySelector('html').classList.add('dark')
+        }
+        else {
+            document.querySelector('html').classList.remove('dark')
+        }
+    }, [mode])
 
   return (
     <div className="flex items-center justify-center">
