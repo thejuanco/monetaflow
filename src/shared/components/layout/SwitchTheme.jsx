@@ -13,10 +13,10 @@ export default function SwitchTheme() {
 
   return (
     <div className="flex items-center justify-center">
-        <div className="relative flex items-center gap-1 rounded-full border border-gray-100 p-1">
+        <div className="relative dark:bg-gray-900 flex items-center gap-1 rounded-full border border-gray-100 p-1">
             <span
                 className={`
-                    absolute h-8 w-8 rounded-full bg-zinc-200 transition-all
+                    absolute h-8 w-8 rounded-full bg-zinc-200 dark:bg-gray-600 transition-all
                     ${mode === "system" && "translate-x-0"}
                     ${mode === "light" && "translate-x-9"}   
                     ${mode === "dark" && "translate-x-[72px]"}   
@@ -28,7 +28,7 @@ export default function SwitchTheme() {
                 onChange={() => setMode("system")}
                 className="relative z-10 flex h-8 w-8 items-center justify-center"
             >
-                <ComputerDesktopIcon className="h-5 w-5 text-gray-900" />
+                <ComputerDesktopIcon className="h-5 w-5 dark:text-gray-100 text-gray-900" />
                 </Switch>
 
                 {/* Light */}
@@ -37,7 +37,7 @@ export default function SwitchTheme() {
                 onChange={() => setMode("light")}
                 className="relative z-10 flex h-8 w-8 items-center justify-center"
                 >
-                <SunIcon className="h-5 w-5 text-gray-900" />
+                <SunIcon className="h-5 w-5 dark:text-gray-100 text-gray-900" />
                 </Switch>
 
                 {/* Dark */}
@@ -46,7 +46,7 @@ export default function SwitchTheme() {
                 onChange={() => setMode("dark")}
                 className="relative z-10 flex h-8 w-8 items-center justify-center"
                 >
-                <MoonIcon className="h-5 w-5 text-gray-900" />
+                <MoonIcon className="h-5 w-5 dark:text-gray-100 text-gray-900" />
             </Switch>
         </div>
     </div>
