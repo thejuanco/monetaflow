@@ -6,8 +6,8 @@ export default function TransactionsDash() {
 
 
     return (
-        <div className="w-full border p-5 border-gray-200">
-            <h1 className="font-semibold text-2xl">Transacciones Recientes</h1>
+        <div className="w-full border p-5 dark:border-gray-600 border-gray-200">
+            <h1 className="font-semibold text-2xl dark:text-white">Transacciones Recientes</h1>
             <p className="text-gray-500 text-sm">Has realizado 12 transacciones este mes</p>
 
             <div className="mt-2 space-y-4">
@@ -61,7 +61,7 @@ export default function TransactionsDash() {
                     </div>
                     <span className="text-red-700">$-45.00</span>
                 </div>
-                <button className="w-full border border-gray-200 py-2 hover:bg-gray-100">
+                <button className="w-full dark:text-white dark:border-gray-600 border border-gray-200 py-2 hover:bg-gray-100 dark:hover:bg-gray-800">
                     Ver todas las transacciones
                 </button>
             </div>

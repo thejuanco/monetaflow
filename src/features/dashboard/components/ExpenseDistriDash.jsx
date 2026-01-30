@@ -1,6 +1,6 @@
 export default function ExpenseDistriDash() {
     return (
-        <div className="border border-gray-200 p-5">
+        <div className="border border-gray-200 dark:border-gray-600 p-5">
             <h1 className="font-semibold text-2xl">Distribución de Gastos</h1>
             <p className="text-sm text-gray-600">Cómo se distribuyen tus gastos por categoría</p>
             <div className="m-4">

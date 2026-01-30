@@ -29,16 +29,16 @@ export default function UpdateBalanceDash({ isOpen, setIsOpen }) {
             open={isOpen}
             onClose={() => setIsOpen(false)}
             transition
-            className="fixed inset-0 flex w-screen items-center justify-center bg-black/50 p-4 transition duration-300 ease-out data-closed:opacity-0"
+            className="fixed inset-0 flex w-screen items-center justify-center dark:bg-black/60 bg-black/50 p-4 transition duration-300 ease-out data-closed:opacity-0"
         >
-            <DialogPanel className="max-w-lg bg-white p-8">
-                <DialogTitle className="font-medium text-xl">Actualizar Saldo Total</DialogTitle>
+            <DialogPanel className="max-w-lg bg-white dark:bg-black dark:border dark:border-gray-700 p-8">
+                <DialogTitle className="font-medium text-xl dark:text-white">Actualizar Saldo Total</DialogTitle>
                 <Description className="text-sm text-gray-500">Actualiza el saldo total de tu cuenta en general</Description>
                 <div className="py-4">
                     <form onSubmit={handleSubmit(onSubmit)}>
-                        <label className="font-medium">Saldo</label>
+                        <label className="font-medium dark:text-white">Saldo</label>
                         <input 
-                            className={`w-full border border-gray-200 p-2 focus:outline-none focus:ring-1 ${
+                            className={`w-full border border-gray-200 p-2 dark:border-gray-600 focus:outline-none focus:ring-1 ${
                                 errors.balance ? "border border-red-500 focus:ring-red-500" : ""
                             }`}
                             placeholder="4560.00"
@@ -64,13 +64,13 @@ export default function UpdateBalanceDash({ isOpen, setIsOpen }) {
                         <div className="flex justify-end gap-3 pt-3">
                             <button 
                                 type="button"
-                                className="border border-gray-200 px-3 py-1 hover:bg-gray-200 hover:cursor-pointer" 
+                                className="border border-gray-200 px-3 py-1 hover:bg-gray-200 hover:cursor-pointer dark:border-gray-600 dark:text-white dark:hover:bg-gray-700" 
                                 onClick={handleClose}
                             >
                                 Cerrar
                             </button>
                             <button 
-                                className="border border-gray-200 px-3 py-1 text-gray-100 bg-emerald-600 hover:cursor-pointer hover:bg-emerald-700"
+                                className="border border-gray-200 px-3 py-1 dark:bg-emerald-800 text-gray-100 bg-emerald-600 hover:cursor-pointer hover:bg-emerald-700"
                                 type="submit"
                             >
                                 Guardar

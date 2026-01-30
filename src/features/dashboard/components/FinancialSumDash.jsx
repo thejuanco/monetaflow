@@ -1,6 +1,6 @@
 export default function FinancialSumDash() {
   return (
-    <div className="border border-gray-200 p-5">
+    <div className="border border-gray-200 dark:border-gray-600 p-5">
         <h1 className="font-semibold text-2xl">Resumen Financiero</h1>
         <div className="m-4">
             <div className="h-[300px] w-full">
