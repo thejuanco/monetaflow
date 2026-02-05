@@ -106,18 +106,18 @@ export default function Calendar() {
         <div className="flex justify-center items-center space-x-4">
           <button 
             onClick={previousMonth}
-            className="p-2 border border-gray-200 hover:bg-gray-100"
+            className="p-2 border border-gray-200 hover:bg-gray-100 dark:border-gray-600 dark:hover:bg-gray-800"
           >
-            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="size-6">
+            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="size-6 dark:text-gray-200">
               <path strokeLinecap="round" strokeLinejoin="round" d="M15.75 19.5 8.25 12l7.5-7.5" />
             </svg>
           </button>
-          <h2 className="text-3xl font-bold tracking-tight">{months[currentDate.getMonth()]} {currentDate.getFullYear()}</h2>
+          <h2 className="text-3xl font-bold tracking-tight dark:text-white">{months[currentDate.getMonth()]} {currentDate.getFullYear()}</h2>
           <button
             onClick={nextMonth}
-            className="p-2 border border-gray-200 hover:bg-gray-100"
+            className="p-2 border border-gray-200 hover:bg-gray-100 dark:border-gray-600 dark:hover:bg-gray-800"
           >
-            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="size-6">
+            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="size-6 dark:text-gray-200">
               <path strokeLinecap="round" strokeLinejoin="round" d="m8.25 4.5 7.5 7.5-7.5 7.5" />
             </svg>
           </button>
@@ -125,22 +125,22 @@ export default function Calendar() {
         <div className="flex items-center gap-2">
           <button
             onClick={() => setIsModalOpen(true)}
-            className="border border-gray-200 flex justify-center items-center py-2 px-3 hover:bg-gray-200"
+            className="border border-gray-200 flex justify-center items-center py-2 px-3 hover:bg-gray-200 dark:border-gray-600 dark:hover:bg-gray-800"
           >
-            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="size-5 text-gray-600 mr-1">
+            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="size-5 text-gray-600 mr-1 dark:text-gray-200 ">
               <path strokeLinecap="round" strokeLinejoin="round" d="M12 4.5v15m7.5-7.5h-15" />
             </svg>
-            Nueva Transacción
+            <p className="dark:text-white">Nueva Transacción</p>
           </button>
         </div>
       </div>
 
-      <div className="p-4 border border-gray-200">
+      <div className="p-4 border border-gray-200 dark:border-gray-600">
         {/*Calendar*/}
         <div className="grid grid-cols-7 gap-2">
           {/* Encabezados de días */}
           {days.map((day) => (
-            <div key={day} className="text-center text-sm font-medium text-gray-500 py-2">
+            <div key={day} className="text-center text-sm font-medium text-gray-500 py-2 dark:text-gray-300">
               {day}
             </div>
           ))}
@@ -154,13 +154,13 @@ export default function Calendar() {
                 key={index}
                 onClick={() => { console.log(day); setSelectedDay(day)}}
                 className={`min-h-[100px] border border-gray-200 p-2 hover:shadow-md text-left transition-all
-                  ${!day.isCurrentMonth ? "bg-gray-100 text-gray-400" : "bg-white"}
-                  ${day.isToday ? "border-green-600 border-2" : ""}
+                  ${!day.isCurrentMonth ? "bg-gray-100 text-gray-400 dark:bg-gray-800 dark:border-gray-600" : "bg-white dark:bg-black dark:border-gray-600"}
+                  ${day.isToday ? "border-green-600 border-2 dark:border-gray-100 dark:border-4" : ""}
                   ${selectedDay?.date === day.date && selectedDay?.month === day.month ? "ring-2 ring-green-600" : ""}
                 `}
               >
                 <div className="flex items-start justify-between">
-                  <span className={`text-sm font-medium ${day.isToday ? "flex h-6 w-6 items-center justify-center" : ""}`}>
+                  <span className={`text-sm font-medium dark:text-white ${day.isToday ? "flex h-6 w-6 items-center justify-center" : ""}`}>
                     {day.date}
                   </span>
                 </div>
