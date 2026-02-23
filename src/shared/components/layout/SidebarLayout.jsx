@@ -21,7 +21,7 @@ export default function SidebarLayout() {
         },
         {
             name: "Transacciones",
-            link: "/dashboard/transaccitions",
+            link: "/dashboard/transactions",
             icon: "home",
             active: true
         },
@@ -126,8 +126,13 @@ export default function SidebarLayout() {
                 <nav className="flex-1 overflow-y-auto py-2 px-2 text-sm space-y-1">
                     {
                         sidebardOptions.filter(nav => nav.active != false).map(nav => (
-                            <NavLink to={nav.link}>
-                                <p>{nav.name}</p>
+                            <NavLink
+                                to={nav.link} end
+                                className={({ isActive }) => 
+                                    `flex flex-row justify-start items-center px-2 py-1 cursor-pointer 
+                                    ${isActive ? "bg-gray-200 dark:bg-gray-800 dark:text-white" : "hover:bg-gray-100 dark:text-gray-300 dark:hover:bg-gray-800"}`}
+                            >
+                                <p className="text-lg">{nav.name}</p>
                             </NavLink>
                         ))
                     }
