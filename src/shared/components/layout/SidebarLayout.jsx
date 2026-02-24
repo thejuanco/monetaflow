@@ -1,44 +1,47 @@
 import { useState } from "react"
 import { NavLink, Link } from "react-router"
+import { HomeIcon, CalendarIcon, CreditCardIcon, WalletIcon, ChartBarIcon, ChartPieIcon } from "@heroicons/react/24/outline"
 import ProfileDropDown from "./ProfileDropDown"
 
 export default function SidebarLayout() {
     const [isSidebarOpen, setIsSidebardOpen] = useState(false)
     const toggleMenu = () => setIsSidebardOpen(!isSidebarOpen)
 
+    //className="size-5 mx-2 text-gray-700 dark:text-gray-200"
+    const classIcons = "size-5 mx-2 text-gray-700 dark:text-gray-200"
     const sidebardOptions = [
         {
             name: "Inicio",
             link: "/dashboard",
-            icon: "home",
+            icon: <HomeIcon className={classIcons}/>,
             active: true
         },
         {
             name: "Presupuestos",
             link: "/dashboard/budgets",
-            icon: "home",
+            icon: <ChartPieIcon className={classIcons}/>,
             active: true
         },
         {
             name: "Transacciones",
             link: "/dashboard/transactions",
-            icon: "home",
+            icon: <CreditCardIcon className={classIcons}/>,
             active: true
         },
         {
             name: "Cuentas",
             link: "/dashboard/accounts",
-            icon: "home",
+            icon: <WalletIcon className={classIcons}/>,
             active: true
         },{
             name: "Reportes",
             link: "/dashboard/reports",
-            icon: "home",
+            icon: <ChartBarIcon className={classIcons}/>,
             active: false
         },{
             name: "Calendario",
             link: "/dashboard/calendar",
-            icon: "home",
+            icon: <CalendarIcon className={classIcons}/>,
             active: true
         }
     ]
@@ -128,10 +131,12 @@ export default function SidebarLayout() {
                         sidebardOptions.filter(nav => nav.active != false).map(nav => (
                             <NavLink
                                 to={nav.link} end
+                                key={nav.name}
                                 className={({ isActive }) => 
                                     `flex flex-row justify-start items-center px-2 py-1 cursor-pointer 
                                     ${isActive ? "bg-gray-200 dark:bg-gray-800 dark:text-white" : "hover:bg-gray-100 dark:text-gray-300 dark:hover:bg-gray-800"}`}
                             >
+                                {nav.icon}
                                 <p className="text-lg">{nav.name}</p>
                             </NavLink>
                         ))
