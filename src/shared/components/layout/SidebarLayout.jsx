@@ -7,40 +7,40 @@ export default function SidebarLayout() {
     const [isSidebarOpen, setIsSidebardOpen] = useState(false)
     const toggleMenu = () => setIsSidebardOpen(!isSidebarOpen)
 
-    //className="size-5 mx-2 text-gray-700 dark:text-gray-200"
     const classIcons = "size-5 mx-2 text-gray-700 dark:text-gray-200"
+    //Rutas del menu
     const sidebardOptions = [
         {
             name: "Inicio",
-            link: "/dashboard",
+            link: "",
             icon: <HomeIcon className={classIcons}/>,
             active: true
         },
         {
             name: "Presupuestos",
-            link: "/dashboard/budgets",
+            link: "budgets",
             icon: <ChartPieIcon className={classIcons}/>,
             active: true
         },
         {
             name: "Transacciones",
-            link: "/dashboard/transactions",
+            link: "transactions",
             icon: <CreditCardIcon className={classIcons}/>,
             active: true
         },
         {
             name: "Cuentas",
-            link: "/dashboard/accounts",
+            link: "accounts",
             icon: <WalletIcon className={classIcons}/>,
             active: true
         },{
             name: "Reportes",
-            link: "/dashboard/reports",
+            link: "reports",
             icon: <ChartBarIcon className={classIcons}/>,
             active: false
         },{
             name: "Calendario",
-            link: "/dashboard/calendar",
+            link: "calendar",
             icon: <CalendarIcon className={classIcons}/>,
             active: true
         }
@@ -74,48 +74,17 @@ export default function SidebarLayout() {
                         </svg>
                     </button>
                     <nav className="flex-1 flex flex-col px-4 space-y-2">
-                        <Link 
-                            to={"/dashboard"}
-                            className=""
-                            onClick={toggleMenu}
-                        >
-                            Inicio
-                        </Link>
-                        <Link 
-                            to={"/dashboard/budgets"}
-                            className=""
-                            onClick={toggleMenu}
-                        >
-                            Presupuestos
-                        </Link>
-                        <Link 
-                            to={"/dashboard/transactions"}
-                            className=""
-                            onClick={toggleMenu}
-                        >
-                            Transacciones
-                        </Link>
-                        <Link 
-                            to={"/dashboard/accounts"}
-                            className=""
-                            onClick={toggleMenu}
-                        >
-                            Cuentas
-                        </Link>
-                        <Link 
-                            to={"/dashboard/reports"}
-                            className=""
-                            onClick={toggleMenu}
-                        >
-                            Reportes
-                        </Link>
-                        <Link 
-                            to={"/dashboard/calendar"}
-                            className=""
-                            onClick={toggleMenu}
-                        >
-                            Calendario
-                        </Link>
+                        {
+                            sidebardOptions.filter(nav => nav.active != false).map(nav => (
+                                <Link
+                                    key={nav.name}
+                                    to={`/dashboard/${nav.link}`}
+                                    onClick={toggleMenu}
+                                >
+                                    {nav.name}
+                                </Link>
+                            ))
+                        }
                     </nav>
                 </aside>
             </header>
@@ -130,7 +99,7 @@ export default function SidebarLayout() {
                     {
                         sidebardOptions.filter(nav => nav.active != false).map(nav => (
                             <NavLink
-                                to={nav.link} end
+                                to={`/dashboard/${nav.link}`} end
                                 key={nav.name}
                                 className={({ isActive }) => 
                                     `flex flex-row justify-start items-center px-2 py-1 cursor-pointer 
