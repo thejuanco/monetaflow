@@ -2,6 +2,7 @@ import { useState } from "react"
 import ModalFormTransaction from "../components/ModalFormTransaction"
 import SummaryMonth from "../components/SummaryMonth"
 import NextPayments from "../components/NextPayments"
+import { transactionsCalendar } from "../../../shared/utils/data/data"
 
 export default function Calendar() {
   const actualDate = new Date()
@@ -49,7 +50,7 @@ export default function Calendar() {
       days.push({
         date,
         month: month - 1,
-        transactions: [],
+        transactions: transactionsCalendar[key] || [],
         isCurrentMonth: false,
         isToday: false
       })
@@ -63,6 +64,7 @@ export default function Calendar() {
       days.push({
         date: i,
         month,
+        transactions: transactionsCalendar[key] || [],
         isCurrentMonth: true,
         isToday
       })
@@ -75,7 +77,7 @@ export default function Calendar() {
       days.push({
         date: i,
         month: month + 1,
-        transactions: [],
+        transactions: transactionsCalendar[key] || [],
         isCurrentMonth: false,
         isToday: false
       })
@@ -147,12 +149,18 @@ export default function Calendar() {
 
           {/*Calendar days*/}
           {calendarDays.map((day, index) => {
-            //const total = getTotalForDay(day)
+            const total = getTotalForDay(day)
+            const hasIncome = day.transactions.some((t) => t.type === "income")
+            const hasExpense = day.transactions.some((t) => t.type === "expense")
+            const hasScheduled = day.transactions.some((t) => t.type === "scheduled")
 
             return (
               <button
                 key={index}
-                onClick={() => { console.log(day); setSelectedDay(day)}}
+                onClick={() => {
+                  console.log(day);
+                  setSelectedDay(day);
+                }}
                 className={`min-h-[100px] border border-gray-200 p-2 hover:shadow-md text-left transition-all
                   ${!day.isCurrentMonth ? "bg-gray-100 text-gray-400 dark:bg-gray-800 dark:border-gray-600" : "bg-white dark:bg-black dark:border-gray-600"}
                   ${day.isToday ? "border-green-600 border-2 dark:border-gray-100 dark:border-4" : ""}
@@ -160,12 +168,48 @@ export default function Calendar() {
                 `}
               >
                 <div className="flex items-start justify-between">
-                  <span className={`text-sm font-medium dark:text-white ${day.isToday ? "flex h-6 w-6 items-center justify-center" : ""}`}>
+                  <span
+                    className={`text-sm font-medium dark:text-white ${day.isToday ? "flex h-6 w-6 items-center justify-center" : ""}`}
+                  >
                     {day.date}
                   </span>
+                  {day.transactions.length > 0 && (
+                    <div className="flex gap-1">
+                      {hasIncome && (
+                        <div className="h-2 w-2 rounded-full bg-emerald-500" />
+                      )}
+                      {hasExpense && (
+                        <div className="h-2 w-2 rounded-full bg-rose-500" />
+                      )}
+                      {hasScheduled && (
+                        <div className="h-2 w-2 rounded-full bg-amber-500" />
+                      )}
+                    </div>
+                  )}
                 </div>
+                {day.transactions.length > 0 && (
+                  <div className="mt-1 space-y-1">
+                    {day.transactions.slice(0, 2).map((transaction) => (
+                      <div 
+                        key={transaction.id}
+                        className={`truncate rounded px-1 py-0.5 text-xs ${
+                          transaction.type === "income"
+                            ? "bg-emerald-100 text-emerald-700 dark:bg-emerald-900/30 dark:text-emerald-400"
+                            : transaction.type === "scheduled"
+                              ? "bg-amber-100 text-amber-700 dark:bg-amber-900/30 dark:text-amber-400"
+                              : "bg-rose-100 text-rose-700 dark:bg-rose-900/30 dark:text-rose-400"
+                        }`}
+                      >
+                        {transaction.title}
+                      </div>
+                    ))}
+                    {day.transactions.length > 2 && (
+                      <div className="text-xs text-muted-foreground">+{day.transactions.length - 2} más</div>
+                    )}
+                  </div>
+                )}
               </button>
-            )
+            );
           })}
         </div>
       </div>

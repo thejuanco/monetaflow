@@ -1,5 +1,4 @@
 import { useState } from "react"
-import { toast } from "sonner"
 import TransactionsDash from "../components/TransactionsDash"
 import FinancialSumDash from "../components/FinancialSumDash"
 import ExpenseDistriDash from "../components/ExpenseDistriDash"

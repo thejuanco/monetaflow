@@ -91,3 +91,33 @@ export const transactonsData = [
     status: "completed",
   },
 ]
+
+export const transactionsCalendar = {
+    "2026-3-5": [
+      { id: "1", title: "Supermercado", amount: -120.5, type: "expense", category: "Alimentación", time: "10:30" },
+    ],
+    "2026-3-10": [
+      { id: "2", title: "Depósito Salario", amount: 2500, type: "income", category: "Salario", time: "09:00" },
+    ],
+    "2026-3-12": [
+      { id: "3", title: "Netflix", amount: -15.99, type: "expense", category: "Entretenimiento", time: "00:00" },
+      { id: "4", title: "Gimnasio", amount: -45.0, type: "expense", category: "Salud", time: "06:00" },
+    ],
+    "2026-3-16": [
+      { id: "5", title: "Café", amount: -5.5, type: "expense", category: "Alimentación", time: "08:15" },
+    ],
+    "2026-3-20": [
+      {
+        id: "6",
+        title: "Pago Tarjeta Crédito",
+        amount: -500,
+        type: "scheduled",
+        category: "Deudas",
+        time: "00:00",
+        description: "Pago programado mensual",
+      },
+    ],
+    "2026-3-25": [
+      { id: "7", title: "Alquiler", amount: -800, type: "scheduled", category: "Vivienda", time: "00:00" },
+    ],
+  }
