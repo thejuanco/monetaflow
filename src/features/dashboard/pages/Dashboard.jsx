@@ -4,6 +4,7 @@ import TransactionsDash from "../components/TransactionsDash"
 import FinancialSumDash from "../components/FinancialSumDash"
 import ExpenseDistriDash from "../components/ExpenseDistriDash"
 import UpdateBalanceDash from "../components/UpdateBalanceDash"
+import CustomToaster from "../../../shared/components/layout/CustomToaster"
 
 export default function Dashboard() {
     const [isOpen, setIsOpen] = useState(false)
@@ -16,7 +17,14 @@ export default function Dashboard() {
           <button 
             className="border dark:border-gray-600 dark:text-white border-gray-200 flex justify-center items-center py-2 px-3 hover:bg-gray-200"
             onClick={() => {
-              toast.error("Funcionalidad en desarrollo")            
+                CustomToaster({
+                  title: "Advertencia",
+                  description: "Funcionalidad en desarrollo",
+                  button: {
+                    label: "Cerrar",
+                    onClick: () => console.log('Click')
+                  }
+                })         
             }}
           >
             <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="size-6 text-gray-600 mr-1 dark:text-gray-300">
