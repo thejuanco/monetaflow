@@ -208,6 +208,13 @@ export default function Calendar() {
                     )}
                   </div>
                 )}
+                {total !== 0 && (
+                  <div
+                    className={`mt-1 text-xs font-medium ${total > 0 ? "text-emerald-600 dark:text-emerald-400" : "text-rose-600 dark:text-rose-400"}`}
+                  >
+                    {total > 0 ? "+" : ""}${Math.abs(total).toFixed(2)}
+                  </div>
+                )}
               </button>
             );
           })}
