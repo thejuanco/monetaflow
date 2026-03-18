@@ -1,5 +1,7 @@
+import { useNavigate } from "react-router"
 
 export default function TransactionsDash() {
+    let navigate = useNavigate()
     const transactions = [
         {}
     ]
@@ -61,7 +63,10 @@ export default function TransactionsDash() {
                     </div>
                     <span className="text-red-700">$-45.00</span>
                 </div>
-                <button className="w-full dark:text-white dark:border-gray-600 border border-gray-200 py-2 hover:bg-gray-100 dark:hover:bg-gray-800">
+                <button
+                    className="w-full dark:text-white dark:border-gray-600 border border-gray-200 py-2 hover:bg-gray-100 dark:hover:bg-gray-800"
+                    onClick={() => navigate('/dashboard/transactions')}
+                >
                     Ver todas las transacciones
                 </button>
             </div>

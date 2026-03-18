@@ -11,7 +11,7 @@ export default function AllAccounts({filterType}) {
             amount: 12580.00,
             plus: 120.00,
             limit: null,
-            type: "main",
+            type: "bank",
             status: true
         },
         {

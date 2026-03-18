@@ -1,4 +1,5 @@
 import { useState } from "react"
+import { Link } from "react-router"
 import TransactionsDash from "../components/TransactionsDash"
 import FinancialSumDash from "../components/FinancialSumDash"
 import ExpenseDistriDash from "../components/ExpenseDistriDash"
