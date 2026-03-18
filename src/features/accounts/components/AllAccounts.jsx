@@ -1,6 +1,6 @@
 import { CreditCardIcon, BanknotesIcon } from "@heroicons/react/24/outline"
 
-export default function AllAccounts() {
+export default function AllAccounts({filterType}) {
     const accountsExample = [
         {
             id: 1,
@@ -23,7 +23,7 @@ export default function AllAccounts() {
             amount: 12580.00,
             plus: 120.00,
             limit: null,
-            type: "main",
+            type: "credit",
             status: true
         },
         {
@@ -35,7 +35,7 @@ export default function AllAccounts() {
             amount: 12580.00,
             plus: 120.00,
             limit: null,
-            type: "main",
+            type: "savings",
             status: true
         },
         {
@@ -47,7 +47,7 @@ export default function AllAccounts() {
             amount: 12580.00,
             plus: 120.00,
             limit: null,
-            type: "main",
+            type: "savings",
             status: true
         },
         {
@@ -59,15 +59,20 @@ export default function AllAccounts() {
             amount: 12580.00,
             plus: 120.00,
             limit: null,
-            type: "main",
+            type: "credit",
             status: true
         }
 
     ]
 
+    const filteredAccounts = accountsExample.filter((account) => {
+        if (!filterType) return account.status !== false;
+        return account.type === filterType && account.status !== false;
+    })
+
     return (
         <div className="grid gap-4 md:grid-cols-2 lg:grid-cols-3">
-            {accountsExample.filter((account) => account.status !== false).map((account, index) => (
+            {filteredAccounts.filter((account) => account.status !== false).map((account, index) => (
                 <div className="p-4 border border-gray-200 space-y-2" key={index}>
                     <div className="flex items-center justify-between w-full">
                         <div className="flex items-center gap-2">

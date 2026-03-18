@@ -5,27 +5,33 @@ export default function TabsAccounts() {
     const categories = [
         {
             name: "Todas",
-            active: true
+            active: true,
+            view: <AllAccounts/>
         },
         {
             name: "Bancarias",
-            active: true
+            active: true,
+            view: <AllAccounts filterType="bank" />
         },
         {
             name: "Cuenta Corriente",
-            active: false
+            active: false,
+            view: <AllAccounts filterType="checking" />
         },
         {
             name: "Crédito",
-            active: true
+            active: true,
+            view: <AllAccounts filterType="credit" />
         },
         {
             name: "Inversión",
-            active: true
+            active: true,
+            view: <AllAccounts filterType="investment" />
         },
         {
             name: "Efectivo",
-            active: false
+            active: false,
+            view: <AllAccounts filterType="cash" />
         }
     ]
 
@@ -44,7 +50,11 @@ export default function TabsAccounts() {
                         ))}
                     </TabList>
                     <TabPanels className="mt-3">
-                        <TabPanel><AllAccounts/></TabPanel>
+                    {categories
+                        .filter((tab) => tab.active === true)
+                        .map((tab, index) => (
+                        <TabPanel key={index}>{tab.view}</TabPanel>
+                        ))}
                     </TabPanels>
                 </TabGroup>
             </div>
