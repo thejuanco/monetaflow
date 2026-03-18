@@ -2,6 +2,7 @@ import { useState } from "react"
 import ModalFormTransaction from "../components/ModalFormTransaction"
 import SummaryMonth from "../components/SummaryMonth"
 import NextPayments from "../components/NextPayments"
+import PendingTransactions from "../components/PendingTransactions"
 import { transactionsCalendar } from "../../../shared/utils/data/data"
 
 export default function Calendar() {
@@ -158,7 +159,6 @@ export default function Calendar() {
               <button
                 key={index}
                 onClick={() => {
-                  console.log(day);
                   setSelectedDay(day);
                 }}
                 className={`min-h-[100px] border border-gray-200 p-2 hover:shadow-md text-left transition-all
@@ -222,6 +222,12 @@ export default function Calendar() {
       </div>
 
       <SummaryMonth/>
+      {selectedDay && (
+        <PendingTransactions
+          transactionsCalendar={transactionsCalendar}
+          selectedDay={selectedDay}
+        />
+      )}
       <NextPayments/>
 
       {/*Modal*/}
