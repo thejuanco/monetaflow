@@ -1,6 +1,9 @@
+import { useState } from "react"
 import DropDownOptionsList from "./DropDownOptionList"
 
 export default function TransactionsList() {
+  const [currentPage, setCurrentPage] = useState(1)
+  const itemsPage = 9
 
   const transactionsData = [
     {
@@ -167,12 +170,23 @@ export default function TransactionsList() {
     { value: "efectivo", label: "Efectivo" },
   ]
 
-  const prevListTransactions = () => {
+  //Calcula que datos mostrar
+  const startIndex = (currentPage - 1) * itemsPage
+  const endIndex = startIndex + itemsPage
+  const currentTransactions = transactionsData.slice(startIndex, endIndex)
 
+  const totalPages = Math.ceil(transactionsData.length / itemsPage)
+
+  const prevListTransactions = () => {
+    if(currentPage > 1){
+      setCurrentPage(currentPage - 1)
+    }
   }
 
   const nextListTransactions = () => {
-
+    if(currentPage < totalPages){
+      setCurrentPage(currentPage + 1)
+    }
   }
 
   return (
@@ -192,7 +206,7 @@ export default function TransactionsList() {
             </tr>
           </thead>
           <tbody>
-            {transactionsData.slice(0, 9).map((transaction, index) => (
+            {currentTransactions.map((transaction, index) => (
               <tr 
                 key={index}
                 className="text-center hover:bg-emerald-50 w-full border-b border-gray-200"
@@ -219,17 +233,19 @@ export default function TransactionsList() {
         </table>
       </div>
       <div className="flex justify-between">
-        <p className="text-gray-600 text-sm">{`Mostrando 10 de ${transactionsData.length} transacciones`}</p>
+        <p className="text-gray-600 text-sm">{`Mostrando ${currentTransactions.length} de ${transactionsData.length} transacciones`}</p>
         <div className="space-x-2">
           <button
             onClick={prevListTransactions}
-            className="border border-gray-200 py-2 px-3"
+            disabled={currentPage === 1}
+            className="border border-gray-200 py-2 px-3 hover:bg-gray-100"
           >
             Anterior
           </button>
           <button 
             onClick={nextListTransactions}
-            className="border border-gray-200 py-2 px-3"
+            disabled={currentPage === totalPages}
+            className="border border-gray-200 py-2 px-3 hover:bg-gray-100"
           >
             Siguiente
           </button>
