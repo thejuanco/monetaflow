@@ -116,3 +116,10 @@ body {
   font-weight: 900;
   font-style: italic;
 }
+
+/* Clases personalizadas */
+@layer components {
+  .base_container {
+    @apply flex-1 space-y-4 p-4 md:p-4 pt-6 h-screen;
+  }
+}

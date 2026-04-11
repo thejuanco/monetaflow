@@ -1,5 +1,5 @@
 export default function Reports() {
   return (
-    <div>Reports</div>
+    <div className="base_container">Reports</div>
   )
 }

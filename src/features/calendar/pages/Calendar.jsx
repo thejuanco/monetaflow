@@ -104,7 +104,7 @@ export default function Calendar() {
   const getTotalForDay = (day) => day.transactions.reduce((sum, t) => sum + t.amount, 0) 
 
   return (
-    <div className="flex-1 space-y-4 p-4 md:p-4 pt-6">
+    <div className="base_container">
       <div className="flex items-center justify-between">
         <div className="flex justify-center items-center space-x-4">
           <button 
