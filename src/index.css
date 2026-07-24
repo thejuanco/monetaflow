@@ -120,6 +120,6 @@ body {
 /* Clases personalizadas */
 @layer components {
   .base_container {
-    @apply flex-1 space-y-4 p-4 md:p-4 pt-6 h-screen;
+    @apply flex-1 space-y-4 h-full p-4 md:p-4 pt-6;
   }
 }

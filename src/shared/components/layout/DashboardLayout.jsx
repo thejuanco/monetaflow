@@ -6,11 +6,11 @@ import NavbarLayout from "./NavbarLayout"
 
 export default function DashboardLayout() {
   return (
-    <div className="min-h-screen dark:bg-black grid md:grid-cols-[240px_1fr] overflow-hidden">
+    <div className="dark:bg-black grid md:grid-cols-[240px_1fr]">
       <SidebarLayout />
-      <div className="flex flex-col overflow-hidden">
+      <div className="flex flex-col flex-1 min-h-screen">
         <NavbarLayout />
-        <main className="flex-1 p-4 overflow-y-auto">
+        <main className="p-4">
           <Outlet />
         </main>
       </div>
