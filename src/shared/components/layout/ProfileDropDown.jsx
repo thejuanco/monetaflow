@@ -1,10 +1,14 @@
+import {useState} from 'react'
 import { Popover, PopoverButton, PopoverPanel } from '@headlessui/react'
 import { useNavigate } from 'react-router'
 import SwitchTheme from './SwitchTheme'
+import ModalExit from './ModalExit'
 
 export default function ProfileDropDown() {
+    const [isModalOpen, setIsModalOpen] = useState(false)
     let navigate = useNavigate()
     return (
+        <>
         <Popover className={"md:mr-11 mr-4"}>
             <PopoverButton className="focus:outline-none dark:text-white dark:border-gray-600 dark:hover:bg-gray-900 border border-gray-200 px-6 py-2 data-active:text-gray-900 dark:data-active:text-white data-focus:outline data-focus:outline-white data-hover:text-gray-700">
                 Perfil
@@ -52,7 +56,8 @@ export default function ProfileDropDown() {
                 <div className="p-1">
                     <button className="flex px-3 py-1 w-full transition hover:bg-red-200"
                         onClick={() => {
-                            navigate("/")
+                            //navigate("/")
+                            setIsModalOpen(true)
                         }}
                     >
                         <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="size-6 text-red-700 mr-1">
@@ -63,5 +68,11 @@ export default function ProfileDropDown() {
                 </div>
             </PopoverPanel>
         </Popover>
+
+        <ModalExit
+            isModalOpen={isModalOpen}
+            setIsModalOpen={setIsModalOpen}
+        />
+        </>
     )
 }
