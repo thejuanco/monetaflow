@@ -27,11 +27,17 @@ return (
                             }
                         `}
                     >
-                        <ArrowTrendingUpIcon/>
+                        <ArrowTrendingUpIcon className={`
+                                ${transaction.type === "income" ? "text-emerald-700 dark:text-emerald-900/30"
+                                    : transaction.type === "scheduled" ? "text-amber-700 dark:bg-amber-900/30"
+                                    : "text-red-700 dark:bg-rose-900/30"
+                                }
+                            `}/>
+                        {/* <ArrowTrendingUpIcon/> */}
                     </div>
-                    <div className="flex flex-col space-y-1">
-                        <div className="flex items-start justify-between w-full">
-                            <div>
+                    <div className="flex flex-col space-y-1 w-full">
+                        <div className="flex justify-between items-center">
+                            <div className="">
                                 <p className="font-medium">{transaction.title}</p>
                                 <div className="flex items-center gap-2 text-xs text-muted-foreground">
                                     <TagIcon className="h-3 w-3 text-gray-600"/>
@@ -40,7 +46,7 @@ return (
                                     <p className="text-gray-600">{transaction.time}</p>
                                 </div>
                             </div>
-                            <div className="ml-20">
+                            <div className="ml-20 flex justify-end">
                                 <span
                                     className={`font-medium ${transaction.type === "income" ? "text-emerald-600" : "text-rose-600"}`}
                                 >
