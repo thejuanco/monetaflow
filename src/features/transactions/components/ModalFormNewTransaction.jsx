@@ -1,6 +1,29 @@
 import { Description, Dialog, DialogPanel, DialogTitle } from '@headlessui/react'
+import { useForm } from 'react-hook-form'
 
 export default function ModalFormNewTransaction({isModalOpen, setIsModalOpen}) {
+    const {
+        register,
+        handleSubmit,
+        reset,
+        formState: { errors }
+    } = useForm()
+
+    const onSubmit = async (data) => {
+        try {
+            console.log(data)
+            setIsModalOpen(true)
+            reset()
+        } catch (error) {
+            console.log(error)
+        }
+    }
+
+    const handleClose = () => {
+        setIsModalOpen(true)
+        reset()
+    }
+
     return (
         <Dialog
             open={isModalOpen}
@@ -12,24 +35,56 @@ export default function ModalFormNewTransaction({isModalOpen, setIsModalOpen}) {
                 <DialogTitle className="font-medium text-xl">Añadir Nueva Transacción</DialogTitle>
                 <Description className="text-sm text-gray-500">Agrega una nueva transacción</Description>
                 <div className="py-4">
-                    <form className="space-y-4 mt-2">
+                    <form onSubmit={handleSubmit(onSubmit)} className="space-y-4 mt-2">
                         <div>
                             <label className="font-medium">Descripción</label>
                             <input
-                                className="w-full border border-gray-200 p-2"
+                                className={`w-full border border-gray-200 p-2 dark:border-gray-600 focus:outline-none focus:ring-1 ${
+                                    errors.description ? "border border-red-500 focus:ring-red-500" : ""
+                                }`}
                                 placeholder="Ej. Supermercado"
                                 type="text"
+                                name="description"
+                                {...register("description", {
+                                    required: {
+                                        value: true,
+                                        message: "La descripción es obligatoria"
+                                    }
+                                })}
                             />
+                            {errors.description && (
+                                <p role="alert" className="text-red-700 pt-2 text-sm text-center">
+                                    {errors.description.message}
+                                </p>
+                            )}
                         </div>
 
                         <div>
                             <label className="font-medium">Monto</label>
                             <input
-                                className="w-full border border-gray-200 p-2"
+                                className={`w-full border border-gray-200 p-2 dark:border-gray-600 focus:outline-none focus:ring-1 ${
+                                    errors.amount ? "border border-red-500 focus:ring-red-500" : ""
+                                }`}
                                 placeholder="0.00"
                                 min="0"
                                 type="number"
+                                name="amount"
+                                {...register("amount", {
+                                    required: {
+                                        value: true,
+                                        message: "El monto es obligatorio"
+                                    },
+                                    min: {
+                                        value: 0,
+                                        message: "El monto no puede ser negativo"
+                                    }
+                                })}
                             />
+                            {errors.amount && (
+                                <p role="alert" className="text-red-700 pt-2 text-sm text-center">
+                                    {errors.amount.message}
+                                </p>
+                            )}
                         </div>
 
                         <div>
@@ -58,17 +113,41 @@ export default function ModalFormNewTransaction({isModalOpen, setIsModalOpen}) {
                         <div>
                             <label className="font-medium">Fecha</label>
                             <input
-                                className="w-full border border-gray-200 p-2"
+                                className={`w-full border border-gray-200 p-2 dark:border-gray-600 focus:outline-none focus:ring-1 ${
+                                    errors.dateTransaction ? "border border-red-500 focus:ring-red-500" : ""
+                                }`}
                                 placeholder="45231.89"
                                 type="date"
+                                name="dateTransaction"
+                                {...register("dateTransaction", {
+                                    required: {
+                                        value: true,
+                                        message: "La fecha no puede estar vacía"
+                                    }
+                                })}
                             />
+                            {errors.dateTransaction && (
+                                <p role="alert" className="text-red-700 pt-2 text-sm text-center">
+                                    {errors.dateTransaction.message}
+                                </p>
+                            )}
                         </div>
-
+                        <div className="flex justify-end gap-3">
+                            <button 
+                                className="border border-gray-200 px-3 py-2 hover:bg-gray-200 hover:cursor-pointer" 
+                                onClick={() => setIsModalOpen(false)}
+                            >
+                                Cerrar
+                            </button>
+                            <button 
+                                className="border border-gray-200 px-3 py-2 text-gray-100 bg-emerald-600 hover:cursor-pointer hover:bg-emerald-700" 
+                                // onClick={() => setIsModalOpen(false)}
+                                type="submit"
+                            >
+                                Guardar
+                            </button>
+                        </div>
                     </form>
-                </div>
-                <div className="flex justify-end gap-3">
-                    <button className="border border-gray-200 px-3 py-2 hover:bg-gray-200 hover:cursor-pointer" onClick={() => setIsModalOpen(false)}>Cerrar</button>
-                    <button className="border border-gray-200 px-3 py-2 text-gray-100 bg-emerald-600 hover:cursor-pointer hover:bg-emerald-700" onClick={() => setIsModalOpen(false)}>Guardar</button>
                 </div>
             </DialogPanel>
         </Dialog>
