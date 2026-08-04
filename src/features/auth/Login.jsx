@@ -3,6 +3,7 @@ import { Link, useNavigate } from "react-router";
 import { useForm } from "react-hook-form";
 import NavBarAuth from "./components/NavBarAuth";
 import Spinner from "../../shared/components/layout/Spinner";
+import Badges from "../../shared/components/layout/Badges";
 
 export default function Login() {
   const [isVisible, setIsVisible] = useState(true);
@@ -44,6 +45,7 @@ export default function Login() {
     <>
       <NavBarAuth />
       <div className="flex min-h-screen flex-col items-center justify-center p-1">
+        <Badges>Para ingresar ingresa un correo cualquiera y contraseña</Badges>
         <div className="md:w-1/4 sm:w-1/2 lg:w-1/4 sm:m-10 p-6 rounded-xl shadow border border-gray-200">
           <h1 className="text-black tracking-tighter font-semibold text-2xl">
             Tu dinero bajo control
