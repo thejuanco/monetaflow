@@ -135,7 +135,10 @@ export default function ModalFormNewTransaction({isModalOpen, setIsModalOpen}) {
                         <div className="flex justify-end gap-3">
                             <button 
                                 className="border border-gray-200 px-3 py-2 hover:bg-gray-200 hover:cursor-pointer" 
-                                onClick={() => setIsModalOpen(false)}
+                                onClick={() => {
+                                    setIsModalOpen(false)
+                                    reset()
+                                }}
                             >
                                 Cerrar
                             </button>
